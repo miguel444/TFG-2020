@@ -1,0 +1,25 @@
+uuid: f28ae210-017d-4249-a140-a21719f03326
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_numero_de_equipos
+    - node.type.competicion
+id: node.competicion.field_numero_de_equipos
+field_name: field_numero_de_equipos
+entity_type: node
+bundle: competicion
+label: 'Numero de equipos'
+description: 'Se identifica el número de clubes que formarán la competición'
+required: true
+translatable: false
+default_value:
+  -
+    value: 2
+default_value_callback: ''
+settings:
+  min: 2
+  max: 16
+  prefix: ''
+  suffix: ''
+field_type: integer

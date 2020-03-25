@@ -1,0 +1,19 @@
+my_module.admin:
+  title: 'Configuración My Module'
+  description: 'example of how to make an admin settings page link'
+  parent: system.admin_structure
+  route_name: my_module.routing
+  weight: 100
+
+
+my_module.addclub:
+  title: 'Inscribir club'
+  route_name: my_module.addclub
+  parent: my_module.admin
+  weight: 100
+
+my_module.addcompeticion:
+  title: 'Añadir competición'
+  route_name: my_module.addcompeticion
+  parent: my_module.admin
+  weight: 100

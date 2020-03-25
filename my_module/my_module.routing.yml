@@ -1,0 +1,23 @@
+my_module.routing:
+  path: '/club'
+  defaults:
+    _controller: '\Drupal\my_module\Controller\MyModuleController::test'
+    _title: 'My Module'
+  requirements:
+    _permission: 'access content'
+
+my_module.addclub:
+  path: '/club/añadir_club'
+  defaults:
+    _form: '\Drupal\my_module\Form\AddClubForm'
+    _title: 'Inscribir Club'
+  requirements:
+    _permission: 'access content'
+
+my_module.addcompeticion:
+  path: '/competicion/añadir_competicion'
+  defaults:
+    _form: '\Drupal\my_module\Form\AddCompeticionForm'
+    _title: 'Añadir Competición'
+  requirements:
+    _permission: 'access content'

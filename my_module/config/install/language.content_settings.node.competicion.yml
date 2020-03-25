@@ -1,0 +1,11 @@
+uuid: 98778fbf-c542-4170-80bb-b189afe9d44c
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.competicion
+id: node.competicion
+target_entity_type_id: node
+target_bundle: competicion
+default_langcode: site_default
+language_alterable: false

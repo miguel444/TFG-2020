@@ -1,0 +1,23 @@
+uuid: 4c72fffd-74b5-424a-8b75-0348c537fb70
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.competicion
+  module:
+    - text
+id: node.competicion.body
+field_name: body
+entity_type: node
+bundle: competicion
+label: 'Descripcion de la competición'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

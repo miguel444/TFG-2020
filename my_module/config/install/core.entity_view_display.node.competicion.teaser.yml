@@ -1,0 +1,35 @@
+uuid: c4d7e69a-9137-4e11-99a3-55351b797b41
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.competicion.body
+    - field.field.node.competicion.field_numero_de_equipos
+    - node.type.competicion
+  module:
+    - text
+    - user
+id: node.competicion.teaser
+targetEntityType: node
+bundle: competicion
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_numero_de_equipos:
+    weight: 102
+    region: content
+hidden:
+  langcode: true

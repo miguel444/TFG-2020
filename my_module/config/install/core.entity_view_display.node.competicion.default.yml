@@ -1,0 +1,38 @@
+uuid: 477e880a-f52b-4107-86ed-19bbf59588b7
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.node.competicion.body
+    - field.field.node.competicion.field_numero_de_equipos
+    - node.type.competicion
+  module:
+    - text
+    - user
+id: node.competicion.default
+targetEntityType: node
+bundle: competicion
+mode: default
+content:
+  body:
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_numero_de_equipos:
+    weight: 102
+    label: inline
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true
