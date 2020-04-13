@@ -1,11 +1,13 @@
-uuid: 2d6b9f24-860d-44f1-8eb2-f9e42b493d5a
+uuid: fc2cdb7c-d8ae-44ab-b08d-07ccd47f188c
 langcode: es
 status: true
 dependencies:
   module:
     - node
-id: node.field_numero_de_equipos
-field_name: field_numero_de_equipos
+_core:
+  default_config_hash: 0POx9LBBbDzBGG5JGASbczSKv5Zcx6jV9nSqN44KeaE
+id: node.field_numero_de_jugadores
+field_name: field_numero_de_jugadores
 entity_type: node
 type: integer
 settings:

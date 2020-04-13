@@ -1,18 +1,26 @@
 my_module.routing:
   path: '/club'
   defaults:
-    _controller: '\Drupal\my_module\Controller\MyModuleController::test'
     _title: 'My Module'
+    _controller: \Drupal\my_module\Controller\MyModuleController::add_menu
   requirements:
     _permission: 'access content'
 
 my_module.addclub:
-  path: '/club/añadir_club'
+  path: '/competicion/añadir_club'
   defaults:
     _form: '\Drupal\my_module\Form\AddClubForm'
     _title: 'Inscribir Club'
   requirements:
-    _permission: 'access content'
+    _permission: 'administrador competiciones'
+
+my_module.addsport:
+  path: '/competicion/añadir_deporte'
+  defaults:
+    _form: '\Drupal\my_module\Form\AddSportForm'
+    _title: 'Añadir Deporte a Competición'
+  requirements:
+    _permission: 'administrador competiciones'
 
 my_module.addcompeticion:
   path: '/competicion/añadir_competicion'
@@ -20,4 +28,20 @@ my_module.addcompeticion:
     _form: '\Drupal\my_module\Form\AddCompeticionForm'
     _title: 'Añadir Competición'
   requirements:
-    _permission: 'access content'
+    _permission: 'administrador competiciones'
+
+my_module.addjugador:
+  path: '/competicion/añadir_jugador'
+  defaults:
+    _form: '\Drupal\my_module\Form\AddJugadorForm'
+    _title: 'Añadir Jugador'
+  requirements:
+    _permission: 'administrador competiciones'
+
+my_module.addmatchresult:
+  path: '/competicion/añadir_resultado'
+  defaults:
+    _form: '\Drupal\my_module\Form\AddMatchResult'
+    _title: 'Apuntar resultado partido'
+  requirements:
+    _permission: 'administrador competiciones'

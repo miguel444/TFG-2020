@@ -1,16 +1,15 @@
-uuid: 2d6b9f24-860d-44f1-8eb2-f9e42b493d5a
+uuid: bbfadb8e-236c-4c70-8da3-043b48a217e7
 langcode: es
 status: true
 dependencies:
   module:
     - node
-id: node.field_numero_de_equipos
-field_name: field_numero_de_equipos
+id: node.field_equipo_visitante
+field_name: field_equipo_visitante
 entity_type: node
-type: integer
+type: entity_reference
 settings:
-  unsigned: false
-  size: normal
+  target_type: node
 module: core
 locked: false
 cardinality: 1

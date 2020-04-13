@@ -2,3 +2,9 @@ name: 'My Module'
 description: " Esto un módulo de prueba para TFG 2020"
 core: 8.x
 type: module
+dependencies:
+  - field
+  - image
+  - node
+  - text
+  - user

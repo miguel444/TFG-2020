@@ -1,0 +1,48 @@
+uuid: 91437cec-7eee-46de-b6bb-859c46b53600
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.node.deporte.body
+    - field.field.node.deporte.field_competicion
+    - field.field.node.deporte.field_numero_de_equipos
+    - node.type.deporte
+  module:
+    - text
+    - user
+id: node.deporte.default
+targetEntityType: node
+bundle: deporte
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_competicion:
+    weight: 3
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_numero_de_equipos:
+    weight: 2
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true

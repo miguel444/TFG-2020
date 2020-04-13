@@ -6,7 +6,6 @@ use Drupal;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\node\Entity\Node;
-use Symfony\Component\HttpFoundation\RedirectResponse;
 use Drupal\my_module\Controller\MyModuleController;
 
 class AddCompeticionForm extends FormBase {
@@ -61,8 +60,8 @@ class AddCompeticionForm extends FormBase {
     if(!empty($this->competicion_names)){
         if (in_array($nombre_competicion,$this->competicion_names)) {
 
-            $option_club = &$form['nombre'];
-            $form_state->setError($option_club, $this->t("Esa competición ya existe"));
+            $option_competicion = &$form['nombre'];
+            $form_state->setError($option_competicion, $this->t("Esa competición ya existe"));
     }}
     
     

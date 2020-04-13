@@ -1,0 +1,100 @@
+uuid: c8a32cec-c824-4a53-831e-3eada124042a
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.node.jugador.body
+    - field.field.node.jugador.field_club
+    - field.field.node.jugador.field_correo_electronico
+    - field.field.node.jugador.field_edad
+    - field.field.node.jugador.field_foto_jugador
+    - image.style.thumbnail
+    - node.type.jugador
+  module:
+    - image
+    - path
+    - text
+_core:
+  default_config_hash: vV-vxC_BC6p-jV1-0pQEXzVqNqQSqPmTcf9XOQ_Fmys
+id: node.jugador.default
+targetEntityType: node
+bundle: jugador
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 5
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+    region: content
+  created:
+    type: datetime_timestamp
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_club:
+    weight: 9
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_correo_electronico:
+    weight: 6
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: email_default
+    region: content
+  field_edad:
+    weight: 7
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_foto_jugador:
+    weight: 8
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  path:
+    type: path
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 2
+    region: content
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 3
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  langcode: true
+  status: true
+  uid: true

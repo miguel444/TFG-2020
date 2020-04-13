@@ -1,0 +1,23 @@
+uuid: 8229c056-77b9-4beb-9e14-6dee375c017b
+langcode: es
+status: true
+dependencies:
+  enforced:
+    module:
+      - my_module
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+_core:
+  default_config_hash: uqKBg4S5nTmu_PNV59YPyJM3kC0QB4jq9YLSrrFsfts
+name: Club
+type: club
+description: 'Se añade un nuevo club a la competición correspondiente'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

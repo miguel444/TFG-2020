@@ -1,16 +1,16 @@
-uuid: 5874df9a-fcf7-4ecd-a900-bbc9a9f2f89f
+uuid: 9aaa9aa2-e11d-481f-b41f-1f9755183111
 langcode: es
 status: true
 dependencies:
   config:
     - field.storage.node.body
-    - node.type.competicion
+    - node.type.deporte
   module:
     - text
-id: node.competicion.body
+id: node.deporte.body
 field_name: body
 entity_type: node
-bundle: competicion
+bundle: deporte
 label: Body
 description: ''
 required: false

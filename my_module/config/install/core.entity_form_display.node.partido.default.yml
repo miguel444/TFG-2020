@@ -1,16 +1,23 @@
-uuid: b5d58147-53dc-4e56-a4bc-ffe11b2ab5ac
+uuid: f213dd5b-8451-4f58-b7d7-3aa251c76d5b
 langcode: es
 status: true
 dependencies:
   config:
-    - field.field.node.competicion.body
-    - node.type.competicion
+    - field.field.node.partido.body
+    - field.field.node.partido.field_equipo_local
+    - field.field.node.partido.field_equipo_visitante
+    - field.field.node.partido.field_fecha_partido
+    - field.field.node.partido.field_lugar
+    - field.field.node.partido.field_resultado_local
+    - field.field.node.partido.field_resultado_visitante
+    - node.type.partido
   module:
+    - datetime
     - path
     - text
-id: node.competicion.default
+id: node.partido.default
 targetEntityType: node
-bundle: competicion
+bundle: partido
 mode: default
 content:
   body:
@@ -29,6 +36,52 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_equipo_local:
+    weight: 122
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_equipo_visitante:
+    weight: 123
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_fecha_partido:
+    weight: 127
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_lugar:
+    weight: 124
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_resultado_local:
+    weight: 125
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_resultado_visitante:
+    weight: 126
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
   langcode:
     type: language_select
     weight: 2

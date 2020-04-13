@@ -1,17 +1,19 @@
-uuid: ef423644-a022-461c-8c1d-f55964de9e9a
+uuid: 96cc04c5-a627-450d-a9cf-5e8b1036769c
 langcode: es
 status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.competicion.body
-    - node.type.competicion
+    - field.field.node.deporte.body
+    - field.field.node.deporte.field_competicion
+    - field.field.node.deporte.field_numero_de_equipos
+    - node.type.deporte
   module:
     - text
     - user
-id: node.competicion.teaser
+id: node.deporte.teaser
 targetEntityType: node
-bundle: competicion
+bundle: deporte
 mode: teaser
 content:
   body:
@@ -28,4 +30,6 @@ content:
     third_party_settings: {  }
     region: content
 hidden:
+  field_competicion: true
+  field_numero_de_equipos: true
   langcode: true

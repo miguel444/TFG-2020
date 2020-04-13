@@ -1,11 +1,11 @@
-uuid: bd778247-2159-4341-8311-0f20f00596d9
+uuid: 048a27a4-0db5-49ba-8d52-c8b3414a7d10
 langcode: es
 status: true
 dependencies:
   config:
-    - node.type.competicion
-id: node.competicion
+    - node.type.partido
+id: node.partido
 target_entity_type_id: node
-target_bundle: competicion
+target_bundle: partido
 default_langcode: site_default
 language_alterable: false

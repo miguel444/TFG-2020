@@ -1,5 +1,0 @@
-my_module.competition.add:
-  route_name: my_module.addcompeticion
-  title: 'Add competition'
-  appears_on:
-    - my_module.addclub

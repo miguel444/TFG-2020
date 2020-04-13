@@ -1,11 +1,11 @@
-uuid: 2d6b9f24-860d-44f1-8eb2-f9e42b493d5a
+uuid: 4a24d2cf-1a40-4db6-80c8-687dda402611
 langcode: es
 status: true
 dependencies:
   module:
     - node
-id: node.field_numero_de_equipos
-field_name: field_numero_de_equipos
+id: node.field_puntos
+field_name: field_puntos
 entity_type: node
 type: integer
 settings:

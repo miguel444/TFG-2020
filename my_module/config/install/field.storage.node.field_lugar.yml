@@ -1,0 +1,33 @@
+uuid: caf54c5d-0bbc-4b5b-a956-0393a5ebf095
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_lugar
+field_name: field_lugar
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: 'Pabellón 1 Fuentenueva'
+      label: 'Pabellón 1 Fuentenueva'
+    -
+      value: 'Pabellón 2 Fuentenueva'
+      label: 'Pabellón 2 Fuentenueva'
+    -
+      value: 'Campo fútbol Cartuja'
+      label: 'Campo fútbol Cartuja'
+    -
+      value: 'Campo fútbol Fuentenueva'
+      label: 'Campo fútbol Fuentenueva'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

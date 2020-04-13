@@ -1,11 +1,13 @@
-uuid: 2d6b9f24-860d-44f1-8eb2-f9e42b493d5a
+uuid: 1c6e0bcd-4dce-4b6a-bf18-02f67d867d91
 langcode: es
 status: true
 dependencies:
   module:
     - node
-id: node.field_numero_de_equipos
-field_name: field_numero_de_equipos
+_core:
+  default_config_hash: FR0Su9C5QfKpMkKd6aXOFsUWGUAuMvfFfAQb6-5GUNM
+id: node.field_edad
+field_name: field_edad
 entity_type: node
 type: integer
 settings:

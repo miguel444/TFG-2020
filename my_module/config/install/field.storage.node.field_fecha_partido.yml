@@ -1,17 +1,17 @@
-uuid: 2d6b9f24-860d-44f1-8eb2-f9e42b493d5a
+uuid: 07258fb6-470d-41dc-a64a-327374d608db
 langcode: es
 status: true
 dependencies:
   module:
+    - datetime
     - node
-id: node.field_numero_de_equipos
-field_name: field_numero_de_equipos
+id: node.field_fecha_partido
+field_name: field_fecha_partido
 entity_type: node
-type: integer
+type: datetime
 settings:
-  unsigned: false
-  size: normal
-module: core
+  datetime_type: datetime
+module: datetime
 locked: false
 cardinality: 1
 translatable: true

@@ -1,0 +1,13 @@
+uuid: 7ae0ff70-652d-4aeb-b862-ae5b0971c68f
+langcode: es
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: ufUsJiU5XWZJHPepnz7eaelPFU1geb8nlJ0IzwBNptY
+id: administrador_competiciones
+label: 'Administrador de competiciones'
+weight: 3
+is_admin: false
+permissions:
+  - 'administrador competiciones'
+  - 'arbitros competiciones'

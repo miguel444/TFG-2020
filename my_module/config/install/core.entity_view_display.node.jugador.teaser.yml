@@ -1,0 +1,41 @@
+uuid: 04820d92-3170-4982-9ccf-e11357ec587c
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.jugador.body
+    - field.field.node.jugador.field_club
+    - field.field.node.jugador.field_correo_electronico
+    - field.field.node.jugador.field_edad
+    - field.field.node.jugador.field_foto_jugador
+    - node.type.jugador
+  module:
+    - text
+    - user
+_core:
+  default_config_hash: v8n3gl8YmjMMxMOK50wNnuDf2wzzgl5vjEA3c81jZ7w
+id: node.jugador.teaser
+targetEntityType: node
+bundle: jugador
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_club: true
+  field_correo_electronico: true
+  field_edad: true
+  field_foto_jugador: true
+  langcode: true

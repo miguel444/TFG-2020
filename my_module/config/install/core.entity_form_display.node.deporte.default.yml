@@ -1,16 +1,18 @@
-uuid: b5d58147-53dc-4e56-a4bc-ffe11b2ab5ac
+uuid: 58f51f7e-fb29-4a74-b985-1e8272e938d1
 langcode: es
 status: true
 dependencies:
   config:
-    - field.field.node.competicion.body
-    - node.type.competicion
+    - field.field.node.deporte.body
+    - field.field.node.deporte.field_competicion
+    - field.field.node.deporte.field_numero_de_equipos
+    - node.type.deporte
   module:
     - path
     - text
-id: node.competicion.default
+id: node.deporte.default
 targetEntityType: node
-bundle: competicion
+bundle: deporte
 mode: default
 content:
   body:
@@ -29,6 +31,23 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_competicion:
+    weight: 123
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_numero_de_equipos:
+    weight: 122
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
   langcode:
     type: language_select
     weight: 2

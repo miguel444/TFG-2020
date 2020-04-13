@@ -13,6 +13,7 @@ use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Form\FormBase;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Drupal\Core\Form\FormStateInterface;
+use Symfony\Component\Routing\RouteCollection;
 
 
 class MyModuleController extends ControllerBase{
@@ -51,37 +52,13 @@ class MyModuleController extends ControllerBase{
 
     }
 
-    public function update_nodes($opcion){
-
-        if ($opcion == 0) {
-
-            $this->nodos_competiciones = Drupal::entityQuery('node')
-                ->condition('type', 'competicion')
-                ->execute();
     
-        }elseif($opcion == 1){
-
-            $this->nodos_clubes = Drupal::entityQuery('node')
-                ->condition('type', 'club')
-                ->execute();
-
-        }else{
-
-
-            $this->nodos_jugadores = Drupal::entityQuery('node')
-                ->condition('type', 'jugador')
-				->execute();
-        }   
-        
-
-    }
-
     public static function create_node_club($nombre,$num_jugadores,$competicion){
 
         $node = Node::create(array(
             'type' => 'club',
             'title' => $nombre,
-            'field_competicion' => $competicion,
+            'field_deporte' => $competicion,
             'field_numero_de_jugadores' => $num_jugadores,
         ));
 
@@ -89,14 +66,44 @@ class MyModuleController extends ControllerBase{
 
         //$this->update_nodes(1);
     }
+
+    public static function create_node_jugador($nombre,$fecha,$club,$correo,$telefono,$foto){
+
+        $node = Node::create(array(
+            'type' => 'jugador',
+            'title' => $nombre,
+            'field_club' => $club,
+            'field_fecha' => $fecha,
+            'field_correo_electronico' => $correo,
+            'field_telefono' => $telefono,
+            'field_foto_jugador' => $foto,));
+
+        $node->save();
+
+        //$this->update_nodes(1);
+    }
 	
 
-    public static function create_node_competicion($nombre,$num_equipos){
+    public static function create_node_deporte($nombre,$num_equipos,$competicion){
+
+        $node = Node::create(array(
+            'type' => 'deporte',
+            'title' => $nombre,
+            'field_numero_de_equipos' => $num_equipos,
+            'field_competicion' => $competicion,
+        ));
+
+        $node->save();
+
+        //$this->update_nodes(0);
+    }
+
+    public static function create_node_competicion($nombre,$num_deportes){
 
         $node = Node::create(array(
             'type' => 'competicion',
             'title' => $nombre,
-            'field_numero_de_equipos' => $num_equipos,
+            'field_numero_de_deportes' => $num_deportes,
         ));
 
         $node->save();
@@ -130,21 +137,17 @@ class MyModuleController extends ControllerBase{
 
 	public function test() {
 		
-      $form =  Drupal::entityQuery('node')
-        ->condition('type', 'competicion')
-        ->execute(); 
-        
+        return array(
+            '#type' => 'item',
+            '#markup' => t("Hola mundo"),
 
-        
-
-
-        return $form;
+        );
 
     }
     
 
 
-}
+
 
 
 
@@ -203,4 +206,19 @@ class FormularioClub extends FormBase {
     );
   }
 }*/
+
+
+public function add_menu() {
+
+    $query = Drupal::entityQuery('node')
+                ->condition('type', 'competicion')
+                ->execute();
+        
+        
+
+    return Node::load(array_pop($query));
+ 
+  }
+
+}
 ?>

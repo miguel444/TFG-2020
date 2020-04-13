@@ -1,16 +1,18 @@
-uuid: 5874df9a-fcf7-4ecd-a900-bbc9a9f2f89f
+uuid: 35c442d1-b861-49a7-97e2-232b702c9ce3
 langcode: es
 status: true
 dependencies:
   config:
     - field.storage.node.body
-    - node.type.competicion
+    - node.type.jugador
   module:
     - text
-id: node.competicion.body
+_core:
+  default_config_hash: dMxCqW7gEyuiC18YXaGDIA7mmVCWgzMDy9K6KxTjRAo
+id: node.jugador.body
 field_name: body
 entity_type: node
-bundle: competicion
+bundle: jugador
 label: Body
 description: ''
 required: false

@@ -1,0 +1,7 @@
+administrador competiciones:
+  title: 'Administer competitions'
+  restrict access: true
+
+arbitros competiciones:
+  title: 'Administer competition entries'
+  restrict access: true

@@ -1,4 +1,4 @@
-uuid: bd7da838-21eb-4aeb-8d17-54856cd4d690
+uuid: ba743d0c-87fb-4db1-a8f8-09436315cc38
 langcode: es
 status: true
 dependencies:
@@ -9,8 +9,8 @@ third_party_settings:
     available_menus:
       - main
     parent: 'main:'
-name: Competicion
-type: competicion
+name: Partido
+type: partido
 description: ''
 help: ''
 new_revision: true

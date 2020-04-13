@@ -1,0 +1,123 @@
+uuid: 38fd7731-3021-4107-b893-3c1a64c9565b
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.node.club.body
+    - field.field.node.club.field_deporte
+    - field.field.node.club.field_diferencia_puntos_goles
+    - field.field.node.club.field_image
+    - field.field.node.club.field_numero_de_jugadores
+    - field.field.node.club.field_puntos
+    - field.field.node.club.field_puntos_goles_a_favor
+    - field.field.node.club.field_puntos_goles_en_contra
+    - image.style.thumbnail
+    - node.type.club
+  module:
+    - image
+    - path
+    - text
+_core:
+  default_config_hash: aeHpJpN5iLd0vCgyu5zjZQUgcz4WF6gt0zw4DwS_Uis
+id: node.club.default
+targetEntityType: node
+bundle: club
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 5
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+    region: content
+  created:
+    type: datetime_timestamp
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_deporte:
+    weight: 33
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_diferencia_puntos_goles:
+    weight: 31
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_image:
+    weight: 26
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_numero_de_jugadores:
+    weight: 27
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_puntos:
+    weight: 32
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_puntos_goles_a_favor:
+    weight: 29
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_puntos_goles_en_contra:
+    weight: 30
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  path:
+    type: path
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 2
+    region: content
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 3
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  langcode: true
+  status: true
+  uid: true
