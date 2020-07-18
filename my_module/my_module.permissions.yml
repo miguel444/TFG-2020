@@ -3,5 +3,5 @@ administrador competiciones:
   restrict access: true
 
 arbitros competiciones:
-  title: 'Administer competition entries'
+  title: 'Arbitro'
   restrict access: true

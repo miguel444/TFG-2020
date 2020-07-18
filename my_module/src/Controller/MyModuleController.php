@@ -1,9 +1,9 @@
 <?php
 
 /**
-* @file
-* Contains \Drupal\my_module\Controller\MyModuleController
-*/
+ * @file
+ * Contains \Drupal\my_module\Controller\MyModuleController
+ */
 
 namespace Drupal\my_module\Controller;
 
@@ -16,209 +16,164 @@ use Drupal\Core\Form\FormStateInterface;
 use Symfony\Component\Routing\RouteCollection;
 
 
-class MyModuleController extends ControllerBase{
+class MyModuleController extends ControllerBase
+{
 
-    public $nodos_competiciones ;
-    public $nodos_clubes ;
-    public $nodos_jugadores;
+  public $nodos_competiciones;
+  public $nodos_clubes;
+  public $nodos_jugadores;
 
-	public function __construct(){
 
-        // Sacar datos de la base de datos
-        $query = Drupal::entityQuery('node')
-                ->condition('type', 'competicion')
-                ->execute();
-        
-        if (!empty($query)) {
-			foreach ($query as $competicion) {
-                    $this->nodos_competiciones[] = Node::load($competicion);}}
-        
-        
-        $query = Drupal::entityQuery('node')
-                ->condition('type', 'club')
-                ->execute();
+  public static function create_node_club($nombre, $num_jugadores, $nid_deporte, $nombre_deporte, $nombre_competicion, $grupo)
+  {
 
-        if (!empty($query)) {
-            foreach ($query as $club) {
-                $this->nodos_clubes[] = Node::load($club);}}
-        
-        $query = Drupal::entityQuery('node')
-                ->condition('type', 'jugador')
-                ->execute();
-                
-        if (!empty($query)) {
-            foreach ($query as $jugador) {
-                $this->nodos_jugadores[] = Node::load($jugador);}}
+    $node = Node::create(array(
+      'type' => 'club',
+      'title' => $nombre,
+      'field_deporte' => $nid_deporte,
+      'field_numero_de_jugadores' => $num_jugadores,
+      'field_grupo' => $grupo,
+      'path' => [
+        'alias' => '/Sport_tracker/' . str_replace(' ', '_', $nombre_competicion) . '/' . str_replace(' ', '_', $nombre_deporte) . '/' . str_replace(' ', '_', $nombre),]
+    ));
+
+    $node->save();
+
+    return \Drupal::service('path.alias_manager')->getAliasByPath('/node/' . $node->get('nid')->value);
+
+    //$this->update_nodes(1);
+  }
+
+  public static function create_node_jugador($nombre, $fecha, $club, $correo, $telefono, $foto)
+  {
+
+    $node = Node::create(array(
+      'type' => 'jugador',
+      'title' => $nombre,
+      'field_club' => $club,
+      'field_fecha' => $fecha,
+      'field_correo_electronico' => $correo,
+      'field_telefono' => $telefono,
+      'field_foto_jugador' => $foto,));
+
+    $node->save();
+
+    //$this->update_nodes(1);
+  }
+
+
+  public static function create_node_deporte($nombre, $num_equipos, $nid_competicion, $nombre_competicion)
+  {
+
+    $node = Node::create(array(
+      'type' => 'deporte',
+      'title' => $nombre,
+      'field_numero_de_equipos' => $num_equipos,
+      'field_competicion' => $nid_competicion,
+      'path' => [
+        'alias' => '/Sport_tracker/' . str_replace(' ', '_', $nombre_competicion) . '/' . str_replace(' ', '_', $nombre),]
+    ));
+
+    $node->save();
+
+    return \Drupal::service('path.alias_manager')->getAliasByPath('/node/' . $node->get('nid')->value);
+  }
+
+  public static function create_node_competicion($nombre, $num_deportes,$body)
+  {
+
+    $node = Node::create(array(
+      'type' => 'competicion',
+      'title' => $nombre,
+      'field_numero_de_deportes' => $num_deportes,
+      'body' => $body,
+    ));
+
+    $node->save();
+
+    //$this->update_nodes(0);
+  }
+
+  public static function my_goto($path)
+  {
+    $response = new RedirectResponse($path);
+    $response->send();
+    return;
+  }
+
+  public static function compare_date($date1, $date2)
+  {
+
+
+
+    if ((int)substr($date1, 0, 4) > (int)substr($date2, 0, 4))
+      return TRUE;
+    elseif((int)substr($date1, 5, 2) > (int)substr($date2, 5, 5))
+      return TRUE;
+    elseif ((int)substr($date1, -2) > (int)substr($date2, -2))
+      return TRUE;
+    else
+      return FALSE;
+
+  }
+
+
+  public function settings()
+  {
+    foreach ($this->nodos_clubes as $clubes) {
+
+
+      $aux[] = $clubes->get('field_numero_de_jugadores')->value;
 
     }
 
-    
-    public static function create_node_club($nombre,$num_jugadores,$competicion){
+    return array(
+      '#type' => 'item',
+      '#markup' => t("Hola mundo"),
 
-        $node = Node::create(array(
-            'type' => 'club',
-            'title' => $nombre,
-            'field_deporte' => $competicion,
-            'field_numero_de_jugadores' => $num_jugadores,
-        ));
+    );
+  }
 
-        $node->save();
 
-        //$this->update_nodes(1);
-    }
+  public function test()
+  {
 
-    public static function create_node_jugador($nombre,$fecha,$club,$correo,$telefono,$foto){
+    return array(
+      '#type' => 'item',
+      '#markup' => t("Hola mundo"),
 
-        $node = Node::create(array(
-            'type' => 'jugador',
-            'title' => $nombre,
-            'field_club' => $club,
-            'field_fecha' => $fecha,
-            'field_correo_electronico' => $correo,
-            'field_telefono' => $telefono,
-            'field_foto_jugador' => $foto,));
+    );
 
-        $node->save();
+  }
 
-        //$this->update_nodes(1);
-    }
-	
 
-    public static function create_node_deporte($nombre,$num_equipos,$competicion){
+  public function add_menu()
+  {
 
-        $node = Node::create(array(
-            'type' => 'deporte',
-            'title' => $nombre,
-            'field_numero_de_equipos' => $num_equipos,
-            'field_competicion' => $competicion,
-        ));
-
-        $node->save();
-
-        //$this->update_nodes(0);
-    }
-
-    public static function create_node_competicion($nombre,$num_deportes){
-
-        $node = Node::create(array(
-            'type' => 'competicion',
-            'title' => $nombre,
-            'field_numero_de_deportes' => $num_deportes,
-        ));
-
-        $node->save();
-
-        //$this->update_nodes(0);
-    }
-
-    public static function my_goto($path) { 
-        $response = new RedirectResponse($path);
-        $response->send();
-        return;
+    $my_menu = \Drupal::entityTypeManager()->getStorage('menu_link_content')
+      ->loadByProperties(['menu_name' => 'my-menu-name']);
+    foreach ($my_menu as $menu_item) {
+      $parent_id = $menu_item->getParentId();
+      if (!empty($parent_id)) {
+        $top_level = $parent_id;
+        break;
       }
-
-
-
-    public function settings(){
-        foreach ($this->nodos_clubes as $clubes ) {
-            
-               
-                $aux[] =  $clubes->get('field_numero_de_jugadores')->value;
-            
-        }
-
-        return array(
-            '#type' => 'item',
-            '#markup' => t("Hola mundo"),
-
-        );
     }
-	
+    $menu_link = MenuLinkContent::create([
+      'title' => 'My menu link title',
+      'link' => ['uri' => 'internal:/my/path'],
+      'menu_name' => 'my-menu-name',
+      'parent' => $top_level,
+      'expanded' => TRUE,
+      'weight' => 0,
+    ]);
+    $menu_link->save();
 
-	public function test() {
-		
-        return array(
-            '#type' => 'item',
-            '#markup' => t("Hola mundo"),
-
-        );
-
-    }
-    
-
-
-
-
-
-
-/*
-namespace Drupal\my_module\Form;
-
-
-
-class FormularioClub extends FormBase {
-  
-    public function getFormId() {
-        return 'my_module_formuaarioclub';
-      }
-  
-  public function buildForm(array $form, FormStateInterface $form_state) {
-    $form['nombre'] = array(
-        '#type' => 'textfield',
-        '#title' => t('Nombre del equipo :'),
-        '#required' => TRUE,
-
-    );
-
-    $form['jugadores'] = array(
-        '#type' => 'number',
-        '#title' => t('Numero de jugadores :'),
-        '#required' => TRUE,
-
-    );
-
-    $form['competicion'] = array(
-        '#type' => 'select',
-        '#title' => t('Competicion :'),
-        '#required' => TRUE,
-
-    );
-
-    $form['accept'] = array(
-        '#type' => 'checkbox',
-        '#title' => t('Acepto los términos de uso de esta web'),
-        '#description' =>t('Por favor lee y acepta las condiciones de uso'),
-      );
-
-    $form['actions']['submit'] = [
-        '#type' => 'submit',
-        '#value' => t('Submit'),
-      ];
-    
-    return $form;
   }
-  
-  public function submitForm(array &$form, FormStateInterface $form_state) {
-    drupal_set_message($this->t('Valores: @nombre / @apellido', 
-        [ '@nombre' => $form_state->getValue('nombre'),
-          '@apellido' => $form_state->getValue('apellido'),
-        ])
-    );
-  }
-}*/
 
 
-public function add_menu() {
 
-    $query = Drupal::entityQuery('node')
-                ->condition('type', 'competicion')
-                ->execute();
-        
-        
-
-    return Node::load(array_pop($query));
- 
-  }
 
 }
+
 ?>

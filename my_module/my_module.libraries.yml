@@ -1,0 +1,4 @@
+my_module.styles:
+  css:
+    theme:
+      css/match_result.css: {}

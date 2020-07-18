@@ -7,172 +7,315 @@ use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\node\Entity\Node;
 use Drupal\my_module\Controller\MyModuleController;
-
-class AddMatchResult extends FormBase {
-  
-  
-    public function getFormId() {
-        return 'my_module_addmatchresult';
-      }
-  
-  public function buildForm(array $form, FormStateInterface $form_state) {
-
-    $query = Drupal::entityQuery('node')
-    ->condition('type', 'competicion')
-    ->execute();
-
-    if (!empty($query)) {
-        foreach ($query as $competicion) {
-           $competicion_names[] = Node::load($competicion)->get('title')->value;}}
-    else{
-
-      drupal_set_message("NO EXISTEN COMPETICIONES ACTIVAS DONDE INSCRIBIR EL CLUB",'error');
-      MyModuleController::my_goto('<front>');
-    }
+use Symfony\Component\HttpFoundation\RedirectResponse;
+use Drupal\Core\Url;
 
 
-    $this->$dicc = array();
-    foreach($competicion_names as $competicion){
+class AddMatchResult extends FormBase
+{
 
-        $query = Drupal::entityQuery('node')
-    ->condition('type', 'competicion')
-    ->condition('title',$competicion)
-    ->execute();
+  protected $dicc_competicion_deporte;
+  protected $dicc_deporte_jornada;
+  protected $dicc_jornada_partidos;
 
-    if (!empty($query)) {
-        $competicion_id = Node::load(array_pop($query));
-        }
-    else{
+  protected $nid_partidos;
 
-      drupal_set_message("NO EXISTEN COMPETICIONES ACTIVAS",'error');
-      MyModuleController::my_goto('<front>');
-    }
-    
+  public function getFormId()
+  {
+    return 'my_module_addmatchresult';
+  }
 
-    
-    $query = Drupal::entityQuery('node')
-    ->condition('type', 'club')
-    ->condition('field_competicion',($competicion_id)->get('nid')->value)
-    ->execute();
+  public function buildForm(array $form, FormStateInterface $form_state)
+  {
 
-    if (!empty($query)) {
-        foreach ($query as $club) {
-          $club_names[] = Node::load($club)->get('title')->value;
+    $current_path = \Drupal::service('path.current')->getPath();
+
+
+
+    //drupal_add_css(drupal_get_path('module', 'my_module') .'/my_module.css');
+
+    $this->dicc_competicion_deporte = array();
+    $this->dicc_deporte_jornada = array();
+    $this->nid_nodes = array();
+
+    $lista_competiciones = Drupal::entityQuery('node')
+      ->condition('type', 'competicion')
+      ->execute();
+
+    if (!empty($lista_competiciones)) {
+
+      $check_deporte = [];
+      $check_jornadas = [];
+      $check_partidos = [];
+      foreach ($lista_competiciones as $competicion) {
+
+
+        $competicion_name = Node::load($competicion)->get('title')->value;
+        $nombres_competiciones[] = $competicion_name;
+
+        $this->dicc_deporte_jornada[$competicion_name] = array();
+        $this->dicc_jornada_partidos[$competicion_name] = array();
+
+
+        $this->nid_partidos[$competicion_name] = array(
+          'node' => Node::load($competicion),
+        );
+
+
+
+        $lista_deportes_competicion = Drupal::entityQuery('node')
+          ->condition('type', 'deporte')
+          ->condition('field_competicion', Node::load($competicion)->get('nid')->value)
+          ->execute();
+
+        if (!empty($lista_deportes_competicion)) {
+          $deporte_names = array();
+          foreach ($lista_deportes_competicion as $deporte) {
+            $check_deporte[] = $deporte;
+            $deporte_name = Node::load($deporte)->get('title')->value;
+            $deporte_names[] = $deporte_name;
+
+            $this->dicc_jornada_partidos[$competicion_name][$deporte_name] = array();
+            $this->nid_partidos[$competicion_name][$deporte_name] = array();
+
+
+
+
+            $lista_grupos = Drupal::entityQuery('node')
+              ->condition('type', 'grupo')
+              ->condition('field_deporte_grupo', Node::load($deporte)->get('nid')->value)
+              ->execute();
+
+            if (!empty($lista_grupos)) {
+              $grupos = array();
+              foreach ($lista_grupos as $grupo) {
+                $check_grupos[] = $grupo;
+                $grupo_name = Node::load($grupo)->get('title')->value;
+                $grupos[] = $grupo_name;
+
+
+                $lista_partidos_grupo = Drupal::entityQuery('node')
+                  ->condition('type', 'partido')
+                  ->condition('field_grupo_partido', Node::load($grupo)->get('nid')->value)
+                  ->execute();
+
+                if (!empty($lista_partidos_grupo)) {
+                  $partidos_grupo = array();
+                  foreach ($lista_partidos_grupo as $partido) {
+                    $check_partidos[] = $partido;
+                    $partido_name = Node::load($partido)->get('title')->value;
+                    $partidos_grupo[] = $partido_name;
+
+
+                    $this->nid_partidos[$competicion_name][$deporte_name][$grupo_name][$partido_name] = Node::load($partido);
+
+                  }
+
+
+                  $this->dicc_jornada_partidos[$competicion_name][$deporte_name][$grupo_name] = $partidos_grupo;
+                }
+
+
+              }
+
+              $this->dicc_deporte_jornada[$competicion_name][$deporte_name] = $grupos;
+
+              //$this->dicc_competicion_deporte[$competicion_name] = $deporte_names;
+
+
+            } else {$this->dicc_deporte_jornada[$competicion_name][$deporte_name] = ['No hay jornadas activas en este deporte'];
+            $this->dicc_jornada_partidos[$competicion_name][$deporte_name]= ['No hay jornadas activas en este deporte'];}
+
+
           }
 
-        $this->dicc[$competicion] = $club_names;}
+          $this->dicc_competicion_deporte[$competicion_name] = $deporte_names;
+        }else{
+          $this->dicc_competicion_deporte[$competicion_name]= ['No hay deportes activos en esta competicion'];
+          $this->dicc_jornada_partidos[$competicion_name]= ['No hay deportes activos en esta competicion'];
 
-    else $this->dicc[$competicion] = [];
+        }
+      }
 
-        unset($club_names);
+
+      if (empty($check_deporte)) {
+        \Drupal::messenger()->addMessage(t("No existen deportes activos actualmente"), 'error');
+        MyModuleController::my_goto('<front>');
+      } elseif (empty($check_grupos)) {
+
+
+        \Drupal::messenger()->addMessage(t("No existen grupos activos actualmente"), 'error');
+        MyModuleController::my_goto("<front>");
+
+      }
+      elseif (empty($check_partidos)){
+        \Drupal::messenger()->addMessage(t("No existen partidos activos actualmente"), 'error');
+        MyModuleController::my_goto('<front>');
+
+      }
+
+    } else {
+
+      \Drupal::messenger()->addMessage(t("No existen competiciones activas donde inscribir el club"), 'error');
+      MyModuleController::my_goto('<front>');
+
     }
-    
-
-    
 
 
-            
+
+
+
+
+
     $form['competicion'] = array(
-        '#type' => 'select',
-        '#title' => t('Competición:'),
-        '#required' => TRUE,
-        '#options' => $competicion_names,
-        '#attributes' => [
-        //define static name and id so we can easier select it
-        // 'id' => 'select-colour',
-        'name' => 'field_select_competicion',
-      ],
+      '#type' => 'select',
+      '#validated' => TRUE,
+      '#title' => t('Competición:'),
+      '#required' => TRUE,
+      '#options' => $nombres_competiciones,
+      '#ajax' => [
+        'callback' => '::myAjaxCallback',
+        'disable-refocus' => FALSE, // Or TRUE to prevent re-focusing on the triggering
+        'event' => 'change',
+        'wrapper' => 'edit-output',
+        'method' => 'replace',
+
+      ]
 
     );
 
-    
 
-    
-    
-    
-        /*
-    $competicion_form = &$form['competicion']['#options'][$i];
-    
-
-
-    
-    $query = Drupal::entityQuery('node')
-    ->condition('type', 'competicion')
-    ->condition('title',$competicion_form)
-    ->execute();
-
-    if (!empty($query)) {
-        $competicion_id = Node::load(array_pop($query));
-        }
-    else{
-
-      drupal_set_message("NO EXISTEN COMPETICIONES ACTIVAS",'error');
-      MyModuleController::my_goto('<front>');
-    }
-    
-
-    
-    $query = Drupal::entityQuery('node')
-    ->condition('type', 'club')
-    ->condition('field_competicion',($competicion_id)->get('nid')->value)
-    ->execute();
-
-    if (!empty($query)) {
-        foreach ($query as $club) {
-          $club_names[] = Node::load($club)->get('title')->value;
-          }}
+    $form['deporte'] = [
+      '#type' => 'select',
+      '#title' => t('Deporte :'),
+      '#options' => $this->dicc_competicion_deporte,
+      '#prefix' => '<div id="edit-output">',
+      '#suffix' => '</div>',
+      '#validated' => TRUE,
 
 
-        
-    
-    */
 
-    
-    
-        
+    ];
 
-    
-      
-        # code...
-    
-    
+    $form['validar']= [
+      '#type' => 'button',
+      '#value' => t('Validar'),
+      '#validated' => TRUE,
+      '#ajax' => [
+        'callback' => '::checkJornada',
+        'disable-refocus' => FALSE, // Or TRUE to prevent re-focusing on the triggering
+        'wrapper' => 'edit-partido',
+        'event' => 'click',
+        'method' => 'replace',
+
+      ],
+      '#prefix' => '<div id="validar">',
+      '#suffix' => '</div>',
+
+
+
+
+
+
+    ];
+
+    $form['partido'] = [
+      '#type' => 'select',
+      '#validated' => TRUE,
+      '#title' => t('Seleccione el partido correspondiente :'),
+      '#options' => [],
+      '#prefix' => '<div id="edit-partido">',
+      '#suffix' => '</div>',
+      ];
+
+
+
+
+
     $form['club_local'] = array(
-        '#type' => 'select',
-        '#title' => t('Club local :'),
-        '#required' => TRUE,
-        '#options' => $this->dicc,
-       
+      '#type' => 'number',
+      '#title' => t('Club local :'),
+      '#required' => TRUE,
+      '#value' => 0,
+      '#prefix' => '<div id="club_local">',
+
+
+
+
 
     );
 
     $form['club_visitante'] = array(
-      '#type' => 'select',
+      '#type' => 'number',
       '#title' => t('Club visitante :'),
       '#required' => TRUE,
-      '#options' => $this->dicc,
-
-  );
-
-    
+      '#value' => 0,
+      '#suffix' => '</div>',
 
 
+    );
 
-    $form['accept'] = array(
-        '#type' => 'checkbox',
-        '#title' => t('Acepto los términos de uso de esta web'),
-        '#description' =>t('Por favor lee y acepta las condiciones de uso'),
-        '#required' => TRUE,
-      );
+
+
 
     $form['actions']['submit'] = [
-        '#type' => 'submit',
-        '#value' => t('Submit'),
-      ];
-    
+      '#type' => 'submit',
+      '#value' => t('Submit'),
+      '#prefix' => '<div id="edit-submit">',
+      '#suffix' => '</div>',
+    ];
+
+  $form['#attached']['library'][] = 'my_module/my_module.styles';
+
+
     return $form;
   }
 
-  public function validateForm(array &$form, FormStateInterface $form_state) {
+
+  public function myAjaxCallback(array &$form, FormStateInterface $form_state)
+  {
+
+
+    $selectedValue = $form_state->getValue('competicion');
+
+
+    $selectedText = $form['competicion']['#options'][$selectedValue];
+
+
+    $form['deporte']['#options'] = $this->dicc_competicion_deporte[$selectedText];
+
+
+    return $form['deporte'];
+  }
+
+  public function checkJornada(array &$form, FormStateInterface $form_state)
+  {
+
+
+    $selectedValue = $form_state->getValue('competicion');
+    $competicion = $form['competicion']['#options'][$selectedValue];
+
+    $selectedValue = $form_state->getValue('deporte');
+    $deporte = $form['deporte']['#options'][$competicion][$selectedValue];
+
+    if(array_key_exists($deporte,$this->dicc_jornada_partidos[$competicion]))
+      $form['partido']['#options'] = $this->dicc_jornada_partidos[$competicion][$deporte];
+    else
+      $form['partido']['#options'] = ['No hay jornadas activas en este deporte'];
+
+
+
+
+
+
+    return $form['partido'];
+  }
+
+
+
+
+  public function validateForm(array &$form, FormStateInterface $form_state)
+  {
 
 
     /*
@@ -188,7 +331,7 @@ class AddMatchResult extends FormBase {
 
     $this->competicion_node = Node::load(array_pop($query));
 
-    
+
     $query = Drupal::entityQuery('node')
     ->condition('type', 'club')
     ->condition('field_competicion',($this->competicion_node)->get('nid')->value)
@@ -204,55 +347,52 @@ class AddMatchResult extends FormBase {
           $option_club = &$form['nombre'];
           $form_state->setError($option_club, $this->t("Ese club ya está inscrito en esa competición"));
     }}
-    
+
 
 */
-    
-    
-  }
-  
-  public function submitForm(array &$form, FormStateInterface $form_state) {
 
-/*
-   
+
+  }
+
+  public function submitForm(array &$form, FormStateInterface $form_state)
+  {
 
     $clave = $form_state->getValue('competicion');
-    $competicion_form = &$form['competicion']['#options'][$clave];
+    $competicion_name = &$form['competicion']['#options'][$clave];
 
-    drupal_set_message($this->t('Club inscrito: @nombre en @competicion', 
-        [ '@nombre' => $form_state->getValue('nombre'),
-          '@competicion' => $competicion_form,
-        ])
-    );
+    $deporte_clave = $form_state->getValue('deporte');
+    $deporte_name = &$form['deporte']['#options'][$competicion_name][$deporte_clave];
+
+    $partido_clave = $form_state->getValue('partido');
+    $partido_name = $this->dicc_jornada_partidos[$competicion_name][$deporte_name]['Jornada 1'][$partido_clave];
+    $nid = $this->nid_partidos[$competicion_name][$deporte_name]['Jornada 1'][$partido_name];
 
 
-    
-      $num_equipos = $this->competicion_node->get('field_numero_de_equipos')->value;
-      $this->competicion_node->set('field_numero_de_equipos',$num_equipos+1);
-      $id_competition = $this->competicion_node->get('nid')->value;
-      $this->competicion_node->save();
-      
-    
 
-    MyModuleController::create_node_club($form_state->getValue('nombre'),$form_state->getValue('jugadores'),$id_competition);
-*/
-    MyModuleController::my_goto('<front>');
+
+
+
+
+
+
+
+
+
   }
 
-/*
-  public function create_node_club($nombre,$num_jugadores,$id_competicion){
+  /*
+    public function create_node_club($nombre,$num_jugadores,$id_competicion){
 
-    $node = Node::create(array(
-        'type' => 'club',
-        'title' => $nombre,
-        'field_numero_de_jugadores' => $num_jugadores,
-        'field_competicion' => $id_competicion,
-    ));
+      $node = Node::create(array(
+          'type' => 'club',
+          'title' => $nombre,
+          'field_numero_de_jugadores' => $num_jugadores,
+          'field_competicion' => $id_competicion,
+      ));
 
-    $node->save(); 
-}
-*/
-
+      $node->save();
+  }
+  */
 
 
 }

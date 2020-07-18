@@ -45,3 +45,20 @@ my_module.addmatchresult:
     _title: 'Apuntar resultado partido'
   requirements:
     _permission: 'administrador competiciones'
+
+my_module.listcompeticiones:
+  path: '/competiciones'
+
+  requirements:
+    _permission: 'access content'
+
+my_module.editresult:
+  path: '/competicion/editar_resultado/{partido}'
+  defaults:
+    _form: '\Drupal\my_module\Form\editResult'
+  options:
+    parameters:
+      partido:
+        type: entity:node
+  requirements:
+    _permission: 'administrador competiciones'
