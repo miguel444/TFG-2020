@@ -28,7 +28,7 @@ class AddMatchResult extends FormBase
   public function buildForm(array $form, FormStateInterface $form_state)
   {
 
-    $current_path = \Drupal::service('path.current')->getPath();
+
 
 
 
@@ -45,7 +45,7 @@ class AddMatchResult extends FormBase
     if (!empty($lista_competiciones)) {
 
       $check_deporte = [];
-      $check_jornadas = [];
+
       $check_partidos = [];
       foreach ($lista_competiciones as $competicion) {
 
@@ -81,50 +81,72 @@ class AddMatchResult extends FormBase
 
 
 
-            $lista_grupos = Drupal::entityQuery('node')
-              ->condition('type', 'grupo')
-              ->condition('field_deporte_grupo', Node::load($deporte)->get('nid')->value)
-              ->execute();
-
-            if (!empty($lista_grupos)) {
-              $grupos = array();
-              foreach ($lista_grupos as $grupo) {
-                $check_grupos[] = $grupo;
-                $grupo_name = Node::load($grupo)->get('title')->value;
-                $grupos[] = $grupo_name;
-
 
                 $lista_partidos_grupo = Drupal::entityQuery('node')
                   ->condition('type', 'partido')
-                  ->condition('field_grupo_partido', Node::load($grupo)->get('nid')->value)
+                  ->condition('field_deporte_partido', Node::load($deporte)->get('nid')->value)
                   ->execute();
 
                 if (!empty($lista_partidos_grupo)) {
                   $partidos_grupo = array();
                   foreach ($lista_partidos_grupo as $partido) {
                     $check_partidos[] = $partido;
+                    #############################################################################
+                    #############################################################################
+                    $nid_club_local = Node::load($partido)->get('field_equipo_local')->target_id;
+                    $query = Drupal::entityQuery('node')
+                      ->condition('type', 'club')
+                      ->condition('nid', $nid_club_local)
+                      ->execute();
+
+                    $nombre_club_local = Node::load(array_pop($query))->get('title')->value;
+
+                    #############################################################################
+                    #############################################################################
+
+                    $nid_club_visitante = Node::load($partido)->get('field_equipo_visitante')->target_id;
+                    $query = Drupal::entityQuery('node')
+                      ->condition('type', 'club')
+                      ->condition('nid', $nid_club_visitante)
+                      ->execute();
+
+                    $nombre_club_visitante= Node::load(array_pop($query))->get('title')->value;
+
+                    #############################################################################
+                    #############################################################################
+
+
+
                     $partido_name = Node::load($partido)->get('title')->value;
+                    $grupo =  Node::load($partido)->get('field_partido_grupo')->value;
                     $partidos_grupo[] = $partido_name;
 
 
-                    $this->nid_partidos[$competicion_name][$deporte_name][$grupo_name][$partido_name] = Node::load($partido);
+
+
+                    $this->nid_partidos[$competicion_name][$deporte_name]['Grupo '.$grupo][] = Node::load($partido);
+
+
+
+                    $this->dicc_jornada_partidos[$competicion_name][$deporte_name]['Grupo '.$grupo][] = $nombre_club_local . "   -   " . $nombre_club_visitante;
 
                   }
 
 
-                  $this->dicc_jornada_partidos[$competicion_name][$deporte_name][$grupo_name] = $partidos_grupo;
-                }
 
 
-              }
-
-              $this->dicc_deporte_jornada[$competicion_name][$deporte_name] = $grupos;
-
-              //$this->dicc_competicion_deporte[$competicion_name] = $deporte_names;
 
 
-            } else {$this->dicc_deporte_jornada[$competicion_name][$deporte_name] = ['No hay jornadas activas en este deporte'];
-            $this->dicc_jornada_partidos[$competicion_name][$deporte_name]= ['No hay jornadas activas en este deporte'];}
+
+
+              //$this->dicc_deporte_jornada[$competicion_name][$deporte_name] = $grupos;
+
+
+
+
+            } else {$this->dicc_deporte_jornada[$competicion_name][$deporte_name] = ['No hay partidos activos en este deporte'];
+            $this->dicc_jornada_partidos[$competicion_name][$deporte_name]= ['No hay partidos activos en este deporte'];
+                  }
 
 
           }
@@ -141,12 +163,6 @@ class AddMatchResult extends FormBase
       if (empty($check_deporte)) {
         \Drupal::messenger()->addMessage(t("No existen deportes activos actualmente"), 'error');
         MyModuleController::my_goto('<front>');
-      } elseif (empty($check_grupos)) {
-
-
-        \Drupal::messenger()->addMessage(t("No existen grupos activos actualmente"), 'error');
-        MyModuleController::my_goto("<front>");
-
       }
       elseif (empty($check_partidos)){
         \Drupal::messenger()->addMessage(t("No existen partidos activos actualmente"), 'error');
@@ -160,8 +176,6 @@ class AddMatchResult extends FormBase
       MyModuleController::my_goto('<front>');
 
     }
-
-
 
 
 
@@ -226,6 +240,8 @@ class AddMatchResult extends FormBase
       '#options' => [],
       '#prefix' => '<div id="edit-partido">',
       '#suffix' => '</div>',
+
+
       ];
 
 
@@ -233,24 +249,42 @@ class AddMatchResult extends FormBase
 
 
     $form['club_local'] = array(
-      '#type' => 'number',
+      '#type' => 'details',
       '#title' => t('Club local :'),
-      '#required' => TRUE,
-      '#value' => 0,
-      '#prefix' => '<div id="club_local">',
-
-
+      '#group' => 'information',
+      '#open' => TRUE,
+      '#access' => FALSE,
 
 
 
     );
 
-    $form['club_visitante'] = array(
+    $form['club_local']['resultado'] = array(
       '#type' => 'number',
-      '#title' => t('Club visitante :'),
+      '#title' => t('Resultado Local:'),
       '#required' => TRUE,
       '#value' => 0,
-      '#suffix' => '</div>',
+
+
+    );
+
+    $form['club_visitante'] = array(
+      '#type' => 'details',
+      '#title' => t('Club Visitante:'),
+      '#group' => 'information',
+      '#open' => TRUE,
+      '#access' => FALSE,
+
+
+    );
+
+    $form['club_visitante']['resultado'] = array(
+      '#type' => 'number',
+      '#title' => t('Resultado Visitante :'),
+      '#required' => TRUE,
+      '#value' => 0,
+      
+
 
 
     );
@@ -285,8 +319,10 @@ class AddMatchResult extends FormBase
     $form['deporte']['#options'] = $this->dicc_competicion_deporte[$selectedText];
 
 
+
     return $form['deporte'];
   }
+
 
   public function checkJornada(array &$form, FormStateInterface $form_state)
   {
@@ -301,7 +337,7 @@ class AddMatchResult extends FormBase
     if(array_key_exists($deporte,$this->dicc_jornada_partidos[$competicion]))
       $form['partido']['#options'] = $this->dicc_jornada_partidos[$competicion][$deporte];
     else
-      $form['partido']['#options'] = ['No hay jornadas activas en este deporte'];
+      $form['partido']['#options'] = ['No hay partidos activos en este deporte'];
 
 
 

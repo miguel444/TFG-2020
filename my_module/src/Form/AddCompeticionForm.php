@@ -7,6 +7,7 @@ use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\node\Entity\Node;
 use Drupal\my_module\Controller\MyModuleController;
+use Drupal\file\Entity\File;
 
 class AddCompeticionForm extends FormBase {
 
@@ -36,6 +37,7 @@ class AddCompeticionForm extends FormBase {
         '#required' => TRUE,
 
 
+
     );
 
     $form['descripcion'] = array(
@@ -45,6 +47,31 @@ class AddCompeticionForm extends FormBase {
 
 
     );
+
+    $form['año'] = array(
+      '#type' => 'number',
+      '#title' => t('Año académico (Ejemplo 2011 -> Curso 2011/2012) :'),
+      '#validated' => TRUE,
+      '#requited' => TRUE,
+      '#size' => 4,
+      '#prefix' => '<div id="año">',
+      '#suffix' => '</div>',
+
+
+    );
+
+    $form['reglamento'] = array(
+      '#type' => 'managed_file',
+      '#title' => $this->t('Reglamento (Archivos PDF)'),
+      '#prefix' => '<div class="reglamento">',
+      '#suffix' => '</div>',
+      '#upload_location' => 'public://rules',
+      '#upload_validators' => [
+        'file_validate_extensions' => ['pdf'],
+      ],
+
+    );
+
 
 
     $form['actions']['submit'] = [
@@ -78,19 +105,28 @@ class AddCompeticionForm extends FormBase {
 
   public function submitForm(array &$form, FormStateInterface $form_state) {
 
+    $form_file = $form_state->getValue('reglamento', 0);
+    if (isset($form_file[0]) && !empty($form_file[0])) {
+      $file = File::load($form_file[0]);
+      $file->setPermanent();
+      $file->save();
+    }
+
+    $anio = $form_state->getValue('año');
+
 
     $competicion_form = $form_state->getValue('nombre');
 
     $body = $form_state->getValue('descripcion');
 
 
-    drupal_set_message($this->t('Competición añadida: @competicion',
+    drupal_set_message($this->t('<b>Competición añadida:</b> @competicion',
         ['@competicion' => $competicion_form,
         ])
     );
 
 
-    MyModuleController::create_node_competicion($form_state->getValue('nombre'),0,$body);
+    MyModuleController::create_node_competicion($form_state->getValue('nombre'),0,$body,$form_file[0],$anio);
 
     MyModuleController::my_goto('<front>');
   }

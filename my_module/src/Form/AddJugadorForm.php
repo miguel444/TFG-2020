@@ -9,12 +9,13 @@ use Drupal\node\Entity\Node;
 use Drupal\my_module\Controller\MyModuleController;
 
 class AddJugadorForm extends FormBase {
-  
-  
+
+  protected $club_names;
+  protected $clubes_id;
     public function getFormId() {
         return 'my_module_addplayerform';
       }
-  
+
   public function buildForm(array $form, FormStateInterface $form_state) {
 
     $query = Drupal::entityQuery('node')
@@ -46,20 +47,20 @@ class AddJugadorForm extends FormBase {
         '#title' => t('Club :'),
         '#required' => TRUE,
         '#options' => $this->club_names,
-  
+
     );
 
     $form['correo'] = array(
         '#type' => 'email',
         '#title' => t('Correo electrónico :'),
         '#required' => TRUE,
-  
+
     );
 
     $form['telefono'] = array(
         '#type' => 'tel',
         '#title' => t('Teléfono :'),
-  
+
     );
 
     $form['foto_jugador'] = array(
@@ -69,10 +70,10 @@ class AddJugadorForm extends FormBase {
           'file_validate_extensions' => array('gif png jpg jpeg'),
           '#upload_location' => 'public://pictures',
         ),
-  
+
     );
 
-  
+
     $form['accept'] = array(
         '#type' => 'checkbox',
         '#title' => t('Acepto los términos de uso de esta web'),
@@ -84,7 +85,7 @@ class AddJugadorForm extends FormBase {
         '#type' => 'submit',
         '#value' => t('Submit'),
       ];
-    
+
     return $form;
   }
 
@@ -108,19 +109,19 @@ class AddJugadorForm extends FormBase {
           }
            }}}
 
-    
+
     $nombre_jugador = $form_state->getValue('nombre');
-  
+
     if(!empty($jugador_names)){
         if (in_array($nombre_jugador,$jugador_names)) {
 
             $option_jugador = &$form['nombre'];
             $form_state->setError($option_jugador, $this->t("Ese nombre ya existe en ese club"));
     }}
-    
-    
+
+
   }
-  
+
   public function submitForm(array &$form, FormStateInterface $form_state) {
 
 
@@ -131,9 +132,9 @@ class AddJugadorForm extends FormBase {
     $correo = $form_state->getValue('correo');
     $telefono = $form_state->getValue('telefono');
     $foto = $form_state->getValue('foto_jugador');
-    
 
-    drupal_set_message($this->t('Jugador inscrito en : @club', 
+
+    drupal_set_message($this->t('Jugador inscrito en : @club',
         ['@club' => $club_form,
         ])
     );
@@ -141,7 +142,7 @@ class AddJugadorForm extends FormBase {
     foreach ($this->clubes_id as $club ) {
       if ($club->get('title')->value == $club_form) {
           $id_club = $club->get('nid')->value;
-        
+
       }
     }
 
@@ -161,7 +162,7 @@ class AddJugadorForm extends FormBase {
         'field_competicion' => $id_competicion,
     ));
 
-    $node->save(); 
+    $node->save();
 }
 */
 

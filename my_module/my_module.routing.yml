@@ -1,37 +1,39 @@
-my_module.routing:
-  path: '/club'
+my_module.admin:
+  path: '/sport_tracker'
   defaults:
-    _title: 'My Module'
-    _controller: \Drupal\my_module\Controller\MyModuleController::add_menu
+    _title: 'Sport tracker'
+    _controller: '\Drupal\my_module\Controller\MyModuleController::add_menu'
+
   requirements:
-    _permission: 'access content'
+    _permission: 'acceder al modulo'
 
 my_module.addclub:
-  path: '/competicion/añadir_club'
+  path: '/sport_tracker/clubes/añadir_club'
   defaults:
     _form: '\Drupal\my_module\Form\AddClubForm'
     _title: 'Inscribir Club'
   requirements:
-    _permission: 'administrador competiciones'
+    _permission: 'añadir club'
 
 my_module.addsport:
-  path: '/competicion/añadir_deporte'
+  path: '/sport_tracker/deportes/añadir_deporte'
   defaults:
     _form: '\Drupal\my_module\Form\AddSportForm'
     _title: 'Añadir Deporte a Competición'
+
   requirements:
-    _permission: 'administrador competiciones'
+    _permission: 'añadir deporte'
 
 my_module.addcompeticion:
-  path: '/competicion/añadir_competicion'
+  path: '/sport_tracker/competiciones/añadir_competicion'
   defaults:
     _form: '\Drupal\my_module\Form\AddCompeticionForm'
     _title: 'Añadir Competición'
   requirements:
-    _permission: 'administrador competiciones'
+    _permission: 'añadir competicion'
 
 my_module.addjugador:
-  path: '/competicion/añadir_jugador'
+  path: '/sport_tracker/jugadores/añadir_jugador'
   defaults:
     _form: '\Drupal\my_module\Form\AddJugadorForm'
     _title: 'Añadir Jugador'
@@ -39,26 +41,31 @@ my_module.addjugador:
     _permission: 'administrador competiciones'
 
 my_module.addmatchresult:
-  path: '/competicion/añadir_resultado'
+  path: '/sport_tracker/partidos/añadir_resultado'
   defaults:
     _form: '\Drupal\my_module\Form\AddMatchResult'
     _title: 'Apuntar resultado partido'
   requirements:
-    _permission: 'administrador competiciones'
+    _permission: 'añadir resultado partido'
 
 my_module.listcompeticiones:
-  path: '/competiciones'
+  path: '/sport_tracker/competiciones/listado'
 
   requirements:
     _permission: 'access content'
 
-my_module.editresult:
-  path: '/competicion/editar_resultado/{partido}'
+my_module.addentity:
+  path: '/sport_tracker/añadir_entidad/{id}'
   defaults:
-    _form: '\Drupal\my_module\Form\editResult'
-  options:
-    parameters:
-      partido:
-        type: entity:node
+    _controller: '\Drupal\my_module\Controller\MyModuleController::add_form'
+
   requirements:
-    _permission: 'administrador competiciones'
+    _permission: 'access content'
+
+my_module.editentity:
+  path: '/sport_tracker/editar_entidad/{id}'
+  defaults:
+    _controller: '\Drupal\my_module\Controller\MyModuleController::edit_form'
+
+  requirements:
+    _permission: 'access content'

@@ -7,6 +7,7 @@ use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\node\Entity\Node;
 use Drupal\my_module\Controller\MyModuleController;
+use Drupal\file\Entity\File;
 
 class AddSportForm extends FormBase {
 
@@ -17,7 +18,9 @@ class AddSportForm extends FormBase {
         return 'my_module_addsportform';
       }
 
-  public function buildForm(array $form, FormStateInterface $form_state) {
+  public function buildForm(array $form, FormStateInterface $form_state,$id=NULL) {
+
+
 
     $query = Drupal::entityQuery('node')
     ->condition('type', 'competicion')
@@ -33,6 +36,17 @@ class AddSportForm extends FormBase {
     }
 
     $form['#title'] = $this->t('<div id="title" align="center"><b>AÑADIR NUEVO DEPORTE</b></div>');
+
+    if(!is_null($id)){
+
+      $query = Drupal::entityQuery('node')
+        ->condition('type', 'competicion')
+        ->condition('nid',$id)
+        ->execute();
+
+      $lista[] = Node::load(array_pop($query))->get('title')->value;
+    }
+    else $lista = $competicion_names;
 
 
 
@@ -50,7 +64,7 @@ class AddSportForm extends FormBase {
       '#type' => 'select',
       '#title' => t('Competición :'),
       '#required' => TRUE,
-      '#options' => $competicion_names,
+      '#options' => $lista,
 
   );
 
@@ -104,13 +118,6 @@ class AddSportForm extends FormBase {
       '#title' => t('Fecha de fin de inscripción: '),
       '#suffix' => '</div>',
     );
-
-    $form['reglamento'] = array(
-      '#type' => 'managed_file',
-      '#title' => $this
-        ->t('Reglamento'),
-    );
-
 
 
 
@@ -204,6 +211,12 @@ class AddSportForm extends FormBase {
 
 
 
+
+
+
+
+
+
     $clave = $form_state->getValue('competicion');
     $competicion_form = &$form['competicion']['#options'][$clave];
 
@@ -213,8 +226,14 @@ class AddSportForm extends FormBase {
         ])
     );
 
+    $fecha_inicio = $form_state->getValue('fecha_inicio');
+    $fecha_fin = $form_state->getValue('fecha_fin');
 
-    $PATH = MyModuleController::create_node_deporte($form_state->getValue('nombre'),0,($this->competicion_node)->get('nid')->value,$competicion_form);
+    $fecha_inicio_inscripcion = $form_state->getValue('fecha_inicio_inscripcion');
+    $fecha_fin_incripcion = $form_state->getValue('fecha_fin_inscripcion');
+
+
+    $PATH = MyModuleController::create_node_deporte($form_state->getValue('nombre'),0,($this->competicion_node)->get('nid')->value,$competicion_form,$fecha_inicio,$fecha_fin,$fecha_inicio_inscripcion,$fecha_fin_incripcion);
 
     MyModuleController::my_goto($PATH);
   }

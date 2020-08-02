@@ -9,6 +9,8 @@ use Drupal\node\Entity\Node;
 use Drupal\my_module\Controller\MyModuleController;
 use Drupal\Core\Ajax\AjaxResponse;
 use Drupal\Core\Ajax\ReplaceCommand;
+use Drupal\Core\Ajax\InvokeCommand;
+
 
 
 class AddClubForm extends FormBase
@@ -20,14 +22,19 @@ class AddClubForm extends FormBase
   // Nodo del deporte seleccionado en el formulario
   protected $sport_node;
 
+  // ID del nodo deporte al que se va a referir
+  protected $id_sport_refered;
+
 
   public function getFormId()
   {
     return 'my_module_addclubform';
   }
 
-  public function buildForm(array $form, FormStateInterface $form_state)
+  public function buildForm(array $form, FormStateInterface $form_state,$id=NULL)
   {
+
+
 
     $this->dicc = array();
 
@@ -44,6 +51,7 @@ class AddClubForm extends FormBase
         $nombres_competiciones[] = $competicion_name;
 
 
+
         $lista_deportes_competicion = Drupal::entityQuery('node')
           ->condition('type', 'deporte')
           ->condition('field_competicion', Node::load($competicion)->get('nid')->value)
@@ -58,10 +66,16 @@ class AddClubForm extends FormBase
 
           }
 
+
           $this->dicc[$competicion_name] = $deporte_names;
 
 
-        } else $this->dicc[$competicion_name] = array();
+
+        } else {
+          $this->dicc[$competicion_name] = ['No hay deportes activos en esta competicion'];
+
+        }
+
 
 
       }
@@ -79,8 +93,45 @@ class AddClubForm extends FormBase
 
     }
 
+  $this->id_sport_refered = $id;
+
+    if(!is_null($id)){
 
 
+      $query = Drupal::entityQuery('node')
+        ->condition('type', 'deporte')
+        ->condition('nid',$id)
+        ->execute();
+
+      $deporte_seleccionado[] = Node::load(current($query))->get('title')->value;
+
+
+      $nid = Node::load(current($query))->get('field_competicion')->target_id;
+
+
+
+      $query = Drupal::entityQuery('node')
+        ->condition('type', 'competicion')
+        ->condition('nid',$nid)
+        ->execute();
+
+      $competicion_seleccionada[] = Node::load(current($query))->get('title')->value;
+
+
+    }
+    else {
+      $competicion_seleccionada = $nombres_competiciones;
+      $deporte_seleccionado = $this->dicc;
+    }
+
+
+
+
+
+
+
+
+    $form['#title'] = $this->t('<div id="title" align="center"><b>AÑADIR CLUB</b></div>');
 
     $form['nombre'] = array(
       '#type' => 'textfield',
@@ -90,11 +141,18 @@ class AddClubForm extends FormBase
     );
 
 
+
+
+
+
+
+
     $form['competicion'] = [
       '#type' => 'select',
       '#title' => 'Competición :',
       '#required' => TRUE,
-      '#options' => $nombres_competiciones,
+      '#validated' => TRUE,
+      '#options' => $competicion_seleccionada,
       '#ajax' => [
         'callback' => '::myAjaxCallback',
         'disable-refocus' => FALSE, // Or TRUE to prevent re-focusing on the triggering
@@ -107,12 +165,18 @@ class AddClubForm extends FormBase
     ];
 
 
+
+
+
+
     $form['deporte'] = [
       '#type' => 'select',
       '#title' => t('Deporte :'),
-      '#options' => $this->dicc,
+      '#options' => $deporte_seleccionado,
       '#prefix' => '<div id="edit-output">',
       '#suffix' => '</div>',
+      '#validated' => TRUE,
+
 
 
     ];
@@ -125,10 +189,16 @@ class AddClubForm extends FormBase
     );
 
 
+
+
     $form['actions']['submit'] = [
       '#type' => 'submit',
       '#value' => t('Submit'),
     ];
+
+    $form['#attached']['library'][] = 'my_module/my_module.styles';
+
+
 
     return $form;
   }
@@ -140,15 +210,15 @@ class AddClubForm extends FormBase
     $selectedValue = $form_state->getValue('competicion');
 
 
+
     $selectedText = $form['competicion']['#options'][$selectedValue];
 
 
-
-
-    if (empty($this->dicc[$selectedText]))
-      $form['deporte']['#options'] = ['No hay deportes activos en esta competición'];
-    else
+    if(array_key_exists($selectedText,$this->dicc))
       $form['deporte']['#options'] = $this->dicc[$selectedText];
+    else
+      $form['deporte']['#options'] = ['No hay partidos activos en este deporte'];
+
 
 
     return $form['deporte'];
@@ -158,32 +228,57 @@ class AddClubForm extends FormBase
   public function validateForm(array &$form, FormStateInterface $form_state)
   {
 
+    $nombre_club = $form_state->getValue('nombre');
 
     $competicion_clave = $form_state->getValue('competicion');
     $competicion_name = &$form['competicion']['#options'][$competicion_clave];
-
-
-    $deporte_clave = $form_state->getValue('deporte');
-    $deporte_name = &$form['deporte']['#options'][$competicion_name][$deporte_clave];
-
-    //$num_jugadores = $form_state->getValue('jugadores');
-    $nombre_club = $form_state->getValue('nombre');
 
     $query = Drupal::entityQuery('node')
       ->condition('type', 'competicion')
       ->condition('title', $competicion_name)
       ->execute();
 
-    $competicion_node = Node::load(array_pop($query));
+    $competicion_node = Node::load(current($query));
 
+
+
+
+
+    $deporte_clave = $form_state->getValue('deporte');
+    if(is_null($this->id_sport_refered)){
+    $deporte_name = &$form['deporte']['#options'][$competicion_name][$deporte_clave];
+
+      $query = Drupal::entityQuery('node')
+        ->condition('type', 'deporte')
+        ->condition('title', $deporte_name)
+        ->condition('field_competicion', ($competicion_node)->get('nid')->value)
+        ->execute();
+
+    $this->sport_node = Node::load(current($query));}
+
+    else{
 
     $query = Drupal::entityQuery('node')
       ->condition('type', 'deporte')
-      ->condition('title', $deporte_name)
+      ->condition('nid', $this->id_sport_refered)
       ->condition('field_competicion', ($competicion_node)->get('nid')->value)
       ->execute();
 
-    $this->sport_node = Node::load(array_pop($query));
+    $this->sport_node = Node::load(current($query));
+  }
+
+
+
+
+
+
+    //$num_jugadores = $form_state->getValue('jugadores');
+
+
+
+
+
+
 
 
     $query = Drupal::entityQuery('node')
@@ -213,8 +308,26 @@ class AddClubForm extends FormBase
     $competicion_clave = $form_state->getValue('competicion');
     $competicion_name = &$form['competicion']['#options'][$competicion_clave];
 
+
+
+    $query = Drupal::entityQuery('node')
+      ->condition('type', 'competicion')
+      ->condition('title', $competicion_name)
+      ->execute();
+
+    $competicion_node = Node::load(array_pop($query));
+
     $deporte_clave = $form_state->getValue('deporte');
-    $deporte_name = &$form['deporte']['#options'][$competicion_name][$deporte_clave];
+
+    if(is_null($this->id_sport_refered)) {
+      $deporte_name = &$form['deporte']['#options'][$competicion_name][$deporte_clave];
+    }
+
+
+    else{
+
+      $deporte_name =  ($this->sport_node)->get('title')->value;
+    }
 
 
     drupal_set_message($this->t('Club inscrito: @nombre en @deporte - @competicion',
@@ -231,13 +344,13 @@ class AddClubForm extends FormBase
     $this->sport_node->save();
 
 
-    $alias = MyModuleController::create_node_club($form_state->getValue('nombre'), $form_state->getValue('jugadores'), $id_sport, $deporte_name, $competicion_name,$form_state->getValue('grupo'));
+    $alias = MyModuleController::create_node_club($form_state->getValue('nombre'), $form_state->getValue('jugadores'), $id_sport, $deporte_name, $competicion_name,$form_state->getValue('grupo'),$competicion_node->get('nid')->value);
     MyModuleController::my_goto($alias);
 
-    $node = \Drupal::routeMatch()->getParameter('node');
 
 
-    echo $node->id();exit();
+
+
 
 
   }

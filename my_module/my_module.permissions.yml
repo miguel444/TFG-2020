@@ -1,7 +1,20 @@
-administrador competiciones:
-  title: 'Administer competitions'
+
+acceder al modulo:
+  title: 'Acceder al módulo de competiciones'
   restrict access: true
 
-arbitros competiciones:
-  title: 'Arbitro'
+añadir club:
+  title: 'Añadir club'
+  restrict access: true
+
+añadir deporte:
+  title: 'Añadir deporte'
+  restrict access: true
+
+añadir competicion:
+  title: 'Añadir competición'
+  restrict access: true
+
+añadir resultado partido:
+  title: 'Añadir resultado partido'
   restrict access: true
