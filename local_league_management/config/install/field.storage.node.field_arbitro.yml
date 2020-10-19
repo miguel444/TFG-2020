@@ -1,0 +1,22 @@
+uuid: 79123d89-c87d-4424-ad5c-e6b7e63d6a75
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+    - user
+_core:
+  default_config_hash: AgcDMdWLPpgEZjfkYqTJ8TvyJ3tbLx42yvpTd2D0B9c
+id: node.field_arbitro
+field_name: field_arbitro
+entity_type: node
+type: entity_reference
+settings:
+  target_type: user
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,19 @@
+uuid: 2bd66e5f-d149-4d5b-9614-ffbb3bf4c0c8
+langcode: es
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: SgZzvoZw9o9pwHn7-Xdv7l5wlBeBe8Ea1hRzSalsjLE
+id: becario
+label: Becario
+weight: 7
+is_admin: null
+permissions:
+  - 'acceder al modulo'
+  - 'añadir club deporte'
+  - 'añadir jugador club'
+  - 'editar club'
+  - 'editar jugador'
+  - 'eliminar club'
+  - 'eliminar jugador'
+  - 'view own unpublished content'

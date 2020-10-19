@@ -1,0 +1,32 @@
+uuid: 5ecd0eb2-8bf2-4930-b893-1716b4bee29f
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+    - options
+_core:
+  default_config_hash: 3-XeMvcFC1Ept3HNFIQUqNiRfdpfxc58wq1BsQ-m9Ao
+id: node.field_estado_club
+field_name: field_estado_club
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: Activado
+      label: Activado
+    -
+      value: Desactivado
+      label: Desactivado
+    -
+      value: Pendiente
+      label: Pendiente
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

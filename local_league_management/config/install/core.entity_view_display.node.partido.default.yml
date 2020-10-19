@@ -1,0 +1,134 @@
+uuid: 2e64a761-c965-4075-9b44-03e64f0b27fc
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.node.partido.body
+    - field.field.node.partido.field_arbitro
+    - field.field.node.partido.field_deporte
+    - field.field.node.partido.field_equipo_local
+    - field.field.node.partido.field_equipo_visitante
+    - field.field.node.partido.field_estado_partido
+    - field.field.node.partido.field_fase
+    - field.field.node.partido.field_fecha_partido
+    - field.field.node.partido.field_lugar
+    - field.field.node.partido.field_partido_grupo
+    - field.field.node.partido.field_resultado_local
+    - field.field.node.partido.field_resultado_visitante
+    - node.type.partido
+  module:
+    - datetime
+    - options
+    - text
+    - user
+_core:
+  default_config_hash: WOxa0uPSPGAbq74WiNFJLbGG09hbKiGJcWSz_wVOXEk
+id: node.partido.default
+targetEntityType: node
+bundle: partido
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_arbitro:
+    weight: 113
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_deporte:
+    weight: 112
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_equipo_local:
+    weight: 102
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_equipo_visitante:
+    weight: 103
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_estado_partido:
+    weight: 115
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_fase:
+    weight: 114
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_fecha_partido:
+    weight: 107
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_lugar:
+    weight: 116
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_partido_grupo:
+    weight: 111
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_resultado_local:
+    weight: 105
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_resultado_visitante:
+    weight: 106
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true

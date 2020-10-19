@@ -1,0 +1,22 @@
+uuid: 2294131b-27cb-46b4-bbad-eceaaa6ef6ba
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: UFbi5jq0o355iXtfe9zbTEKtTKm519yEwCnzmiIwjn4
+id: node.field_ficha_deportiva
+field_name: field_ficha_deportiva
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

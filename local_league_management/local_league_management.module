@@ -1,0 +1,13 @@
+<?php
+use Drupal\views\ViewExecutable;
+/**
+ * Implements hook_views_pre_render().
+ */
+function local_league_management_views_pre_render(ViewExecutable $view) {
+  if (isset($view) && (($view->storage->id() == 'listados_competiciones') or($view->storage->id() == 'evas_entidades') or($view->storage->id() == 'competiciones_usuarios')or($view->storage->id() == 'jornadas_en_deporte') )) {
+    $view->element['#attached']['library'][] = 'local_league_management/bootstrap';
+  }
+}
+
+
+?>

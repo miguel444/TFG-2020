@@ -1,0 +1,44 @@
+uuid: d885215e-da74-4f6e-a0aa-696ede1ec2fd
+langcode: es
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: QQVYmVyjA7NiVD4lSZez1ogVkkCkI49y796rvTUa2rs
+id: gestor
+label: 'Gestor de competiciones'
+weight: 5
+is_admin: null
+permissions:
+  - 'acceder al modulo'
+  - 'administer views'
+  - 'añadir club'
+  - 'añadir club deporte'
+  - 'añadir competicion'
+  - 'añadir deporte'
+  - 'añadir arbitro'
+  - 'añadir deporte competicion'
+  - 'añadir entidad'
+  - 'añadir jugador club'
+  - 'añadir partido'
+  - 'añadir resultado partido'
+  - 'añadir usuario'
+  - 'copiar club'
+  - 'copiar deporte'
+  - 'copiar entidad'
+  - 'editar club'
+  - 'editar competicion'
+  - 'editar deporte'
+  - 'editar arbitro'
+  - 'editar entidad'
+  - 'editar jugador'
+  - 'editar partido'
+  - 'editar usuario'
+  - 'eliminar club'
+  - 'eliminar competicion'
+  - 'eliminar deporte'
+  - 'eliminar entidad'
+  - 'eliminar jugador'
+  - 'eliminar partido'
+  - 'eliminar usuario'
+  - 'eliminar arbitro'
+  - 'view own unpublished content'

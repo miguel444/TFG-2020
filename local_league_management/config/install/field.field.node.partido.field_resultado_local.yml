@@ -1,0 +1,25 @@
+uuid: b206fedf-8053-4680-b59b-9ad0710b7705
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_resultado_local
+    - node.type.partido
+_core:
+  default_config_hash: GFy66XQLzarwzuHwChQiXwW9xqzks3TFn-xEUHIfekw
+id: node.partido.field_resultado_local
+field_name: field_resultado_local
+entity_type: node
+bundle: partido
+label: 'Resultado local'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

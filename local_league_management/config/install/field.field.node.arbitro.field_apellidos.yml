@@ -1,0 +1,21 @@
+uuid: 7119f893-85c9-48a9-9f79-aaa7f569af7e
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_apellidos
+    - node.type.arbitro
+_core:
+  default_config_hash: L7b9FVvTLPEZ4Qq5uAFDyB7T2ToNw1oZjiBsdd1w3tI
+id: node.arbitro.field_apellidos
+field_name: field_apellidos
+entity_type: node
+bundle: arbitro
+label: Apellidos
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

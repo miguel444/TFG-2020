@@ -1,0 +1,25 @@
+uuid: c5eb080d-0114-47cb-9f98-2fb6bf20d1f2
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.partido
+  module:
+    - text
+_core:
+  default_config_hash: t418UL-kEILO8y4TnLnYbncqN_OmKpfODdNeP7t_cTA
+id: node.partido.body
+field_name: body
+entity_type: node
+bundle: partido
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

@@ -1,0 +1,21 @@
+uuid: 6fcbb140-c2be-4eb8-8806-873d91c238e5
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: TUgMpooqqXt8ahQpyXDV2HJ8w1t0CQ1qnKiK4TmmEHA
+id: node.field_club
+field_name: field_club
+entity_type: node
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

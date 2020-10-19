@@ -1,0 +1,22 @@
+uuid: 300e79a6-5b76-490f-8a5e-3e54b996838b
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: uHKTHEYTyJKdhB5Z5XIpTHNjxFIBqrfpTHrd1X5VOmY
+id: node.field_numero_de_deportes
+field_name: field_numero_de_deportes
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

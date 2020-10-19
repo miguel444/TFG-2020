@@ -1,0 +1,24 @@
+uuid: c544c954-2ad1-4562-b772-12017800269f
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: Xc2cgHUpj4HVziKDs4Isu9EQRbLacBQPE2xGI9bEhuo
+id: patron_competiciones
+label: 'Patrón competiciones'
+type: 'canonical_entities:node'
+pattern: '/competiciones/[node:title]'
+selection_criteria:
+  c35c1968-acf6-431e-acb0-856f12b78224:
+    id: node_type
+    bundles:
+      competicion: competicion
+    negate: false
+    context_mapping:
+      node: node
+    uuid: c35c1968-acf6-431e-acb0-856f12b78224
+selection_logic: and
+weight: -5
+relationships: {  }

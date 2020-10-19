@@ -1,0 +1,18 @@
+local_league_management.styles:
+  css:
+    theme:
+      css/form.css: {}
+
+
+
+
+bootstrap:
+  version: VERSION
+  css:
+    layout:
+      css/normalice.css: {}
+      'https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css': { type: external }
+
+
+
+

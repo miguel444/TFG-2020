@@ -1,0 +1,31 @@
+uuid: 45902337-cc0f-4ba4-b2ec-cf6c41da2232
+langcode: es
+status: true
+dependencies:
+  config:
+    - views.view.listados_competiciones
+  module:
+    - system
+    - views
+  theme:
+    - bootstrap4
+id: views_block__listados_competiciones_block_4_2
+theme: bootstrap4
+region: content
+weight: -4
+provider: null
+plugin: 'views_block:listados_competiciones-block_4'
+settings:
+  id: 'views_block:listados_competiciones-block_4'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  request_path:
+    id: request_path
+    pages: '/competiciones/*/deportes'
+    negate: false
+    context_mapping: {  }

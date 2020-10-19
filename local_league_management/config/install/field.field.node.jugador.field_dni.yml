@@ -1,0 +1,25 @@
+uuid: 0e4b4339-0bdf-4585-bcf4-933742192150
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_dni
+    - node.type.jugador
+_core:
+  default_config_hash: GiNxzJ9f-PMpnd4P_AzafVhf1AOuu_P9ddYSQBqR5Lg
+id: node.jugador.field_dni
+field_name: field_dni
+entity_type: node
+bundle: jugador
+label: 'DNI sin letra'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0
+  max: 99999999
+  prefix: ''
+  suffix: ''
+field_type: integer

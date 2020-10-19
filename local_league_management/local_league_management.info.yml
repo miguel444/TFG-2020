@@ -1,0 +1,8 @@
+name: 'Local League Management'
+description: " Módulo de gestión deportiva"
+core: 8.x
+type: module
+dependencies:
+  - eva
+  - pathauto
+  - views_bootstrap

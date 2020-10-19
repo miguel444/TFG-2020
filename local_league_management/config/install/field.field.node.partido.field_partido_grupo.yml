@@ -1,0 +1,25 @@
+uuid: 4df3fb8f-67a0-43e0-ad46-188a03a8b984
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_partido_grupo
+    - node.type.partido
+_core:
+  default_config_hash: Pyst1zv1dHqXIB7TlN9Zd4Od4Iq3tk94esoENakTE6o
+id: node.partido.field_partido_grupo
+field_name: field_partido_grupo
+entity_type: node
+bundle: partido
+label: Grupo
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

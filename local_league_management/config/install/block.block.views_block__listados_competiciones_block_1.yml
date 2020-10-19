@@ -1,0 +1,29 @@
+uuid: ac9782e3-b31c-4b97-a3d2-53afae0382e1
+langcode: es
+status: true
+dependencies:
+  config:
+    - views.view.listados_competiciones
+  module:
+    - ctools
+    - views
+id: views_block__listados_competiciones_block_1
+region: sidebar_first
+weight: -8
+provider: null
+plugin: 'views_block:listados_competiciones-block_1'
+settings:
+  id: 'views_block:listados_competiciones-block_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      competicion: competicion
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

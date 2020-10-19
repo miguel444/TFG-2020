@@ -1,0 +1,27 @@
+uuid: bf5286e8-3254-4bc8-abd4-da497636532e
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_numero_de_deportes
+    - node.type.competicion
+_core:
+  default_config_hash: BmzETgpXTBET7WbzeFv5R5JO0tFNs6vjP-wkv_wbqqg
+id: node.competicion.field_numero_de_deportes
+field_name: field_numero_de_deportes
+entity_type: node
+bundle: competicion
+label: 'Número de deportes'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

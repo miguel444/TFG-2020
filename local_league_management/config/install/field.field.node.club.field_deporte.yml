@@ -1,0 +1,28 @@
+uuid: 1cee6c1f-c065-486b-8bb5-41d1890b005f
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_deporte
+    - node.type.club
+_core:
+  default_config_hash: p5C6ZmHuAZyTitlPhMzVPJXllsmK5mcijxIhtDKPV8M
+id: node.club.field_deporte
+field_name: field_deporte
+entity_type: node
+bundle: club
+label: Deporte
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles: {  }
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

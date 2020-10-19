@@ -1,0 +1,21 @@
+uuid: bbfadb8e-236c-4c70-8da3-043b48a217e7
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: dYbVNyN5goazUS5ITYxtbAnF9xJZNr0DCDeRtcuhwhE
+id: node.field_equipo_visitante
+field_name: field_equipo_visitante
+entity_type: node
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

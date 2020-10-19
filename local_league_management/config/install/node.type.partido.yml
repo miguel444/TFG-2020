@@ -1,0 +1,20 @@
+uuid: ba743d0c-87fb-4db1-a8f8-09436315cc38
+langcode: es
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+_core:
+  default_config_hash: 3_K5kb6u_Die2ukU3HktI6VZpCC9Vgkns4E3_uYr4ps
+name: Partido
+type: partido
+description: 'Entidad que representa un partido de alguna de las competiciones'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

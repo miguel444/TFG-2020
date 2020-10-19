@@ -1,0 +1,57 @@
+uuid: d490acea-804b-4616-ba30-a85adb20ade2
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.node.club.body
+    - field.field.node.club.field_alias
+    - field.field.node.club.field_capitan
+    - field.field.node.club.field_competicion
+    - field.field.node.club.field_deporte
+    - field.field.node.club.field_diferencia_puntos_goles
+    - field.field.node.club.field_estado_club
+    - field.field.node.club.field_grupo
+    - field.field.node.club.field_numero_de_jugadores
+    - field.field.node.club.field_puntos
+    - field.field.node.club.field_puntos_goles_a_favor
+    - field.field.node.club.field_puntos_goles_en_contra
+    - node.type.club
+  module:
+    - user
+_core:
+  default_config_hash: 8DnoVwaGpTIMCYJtftstzepu7JNCjF7ExmJRTGqKgX0
+id: node.club.default
+targetEntityType: node
+bundle: club
+mode: default
+content:
+  evas_entidades_entity_view_5:
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  evas_entidades_entity_view_7:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  jornadas_en_deporte_entity_view_6:
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  body: true
+  field_alias: true
+  field_capitan: true
+  field_competicion: true
+  field_deporte: true
+  field_diferencia_puntos_goles: true
+  field_estado_club: true
+  field_grupo: true
+  field_numero_de_jugadores: true
+  field_puntos: true
+  field_puntos_goles_a_favor: true
+  field_puntos_goles_en_contra: true
+  langcode: true
+  links: true

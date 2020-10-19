@@ -1,0 +1,22 @@
+uuid: 0e6407dc-7a45-45f9-8687-eaf242af5db6
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: YP2dUisVnRbiB0ysHoXuWVoDAvualwvuiHHfIzL-eNc
+id: node.field_puntos_goles_a_favor
+field_name: field_puntos_goles_a_favor
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

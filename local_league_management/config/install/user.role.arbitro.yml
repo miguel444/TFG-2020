@@ -1,0 +1,13 @@
+uuid: e4d32892-0556-447e-be5b-4952aa0c269a
+langcode: es
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: fU5Ct5JG8npSdiG6SVjIQXftNZLvJbzr3F0xqu8JdFg
+id: arbitro
+label: Arbitro
+weight: 4
+is_admin: null
+permissions:
+  - 'acceder al modulo'
+  - 'añadir resultado partido'

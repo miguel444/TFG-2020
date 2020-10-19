@@ -1,0 +1,21 @@
+uuid: 8db3a566-144e-4b89-8f34-557d631db83c
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: HQS_mQjKmv0jCLz-ZqX5Qoyt7UMJTauW6BTFC2JZUrM
+id: node.field_competicion
+field_name: field_competicion
+entity_type: node
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

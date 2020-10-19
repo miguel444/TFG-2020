@@ -1,0 +1,20 @@
+uuid: f70d3267-2096-4fd0-9247-fc0e69548690
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.competicion
+_core:
+  default_config_hash: hBspHZLgEXjzVR1I22PssMtvJL51ExWGnXjvwyGnnCU
+id: node.competicion.title
+field_name: title
+entity_type: node
+bundle: competicion
+label: 'Nombre de la competición'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

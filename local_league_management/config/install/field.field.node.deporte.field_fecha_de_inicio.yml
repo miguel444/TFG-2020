@@ -1,0 +1,23 @@
+uuid: f0ff0e34-9c79-451c-b69f-c0c097567b06
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_fecha_de_inicio
+    - node.type.deporte
+  module:
+    - datetime
+_core:
+  default_config_hash: VmRojedSXZi2vJ1LVlxfBp4sPOKW-y2Uz7cXU0s-594
+id: node.deporte.field_fecha_de_inicio
+field_name: field_fecha_de_inicio
+entity_type: node
+bundle: deporte
+label: 'Fecha de inicio'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

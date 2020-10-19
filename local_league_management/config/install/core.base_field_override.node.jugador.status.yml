@@ -1,0 +1,24 @@
+uuid: 92529ef3-a5bf-40ac-8a56-1be68afd5e08
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.jugador
+_core:
+  default_config_hash: vmTLSssWNgyo49BKfThyjmE2gVbIVPZXS4qeGu8SwYg
+id: node.jugador.status
+field_name: status
+entity_type: node
+bundle: jugador
+label: Published
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

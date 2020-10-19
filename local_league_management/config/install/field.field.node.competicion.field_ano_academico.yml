@@ -1,0 +1,25 @@
+uuid: f1ae432d-d0a4-4a38-8ac4-b77d2aaf4a48
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ano_academico
+    - node.type.competicion
+_core:
+  default_config_hash: SXpAjT9kWxKCuU66-_K_P484I5-Aqk4BzrLfSIsQzQE
+id: node.competicion.field_ano_academico
+field_name: field_ano_academico
+entity_type: node
+bundle: competicion
+label: 'Año académico'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

@@ -1,0 +1,185 @@
+uuid: f213dd5b-8451-4f58-b7d7-3aa251c76d5b
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.node.partido.body
+    - field.field.node.partido.field_arbitro
+    - field.field.node.partido.field_deporte
+    - field.field.node.partido.field_equipo_local
+    - field.field.node.partido.field_equipo_visitante
+    - field.field.node.partido.field_estado_partido
+    - field.field.node.partido.field_fase
+    - field.field.node.partido.field_fecha_partido
+    - field.field.node.partido.field_lugar
+    - field.field.node.partido.field_partido_grupo
+    - field.field.node.partido.field_resultado_local
+    - field.field.node.partido.field_resultado_visitante
+    - node.type.partido
+  module:
+    - datetime
+    - path
+    - text
+_core:
+  default_config_hash: l6wD9-xklJOsoHJgL3s9pp8tI1hYib1npHVqqfpwRXM
+id: node.partido.default
+targetEntityType: node
+bundle: partido
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 121
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+    region: content
+  created:
+    type: datetime_timestamp
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_arbitro:
+    weight: 133
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_deporte:
+    weight: 132
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_equipo_local:
+    weight: 122
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_equipo_visitante:
+    weight: 123
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_estado_partido:
+    weight: 135
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_fase:
+    weight: 134
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_fecha_partido:
+    weight: 127
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_lugar:
+    weight: 136
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_partido_grupo:
+    weight: 131
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_resultado_local:
+    weight: 125
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_resultado_visitante:
+    weight: 126
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 15
+    region: content
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 120
+    region: content
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 16
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 5
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    region: content
+    third_party_settings: {  }
+hidden: {  }

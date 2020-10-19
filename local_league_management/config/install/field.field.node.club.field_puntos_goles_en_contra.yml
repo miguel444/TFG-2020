@@ -1,0 +1,25 @@
+uuid: 9819ddf9-7e5d-4b78-a7de-6468241465fd
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_puntos_goles_en_contra
+    - node.type.club
+_core:
+  default_config_hash: 1sqVAOsHdq4pyeItrOMFE3M3hEaDaxDyDz11q711IIk
+id: node.club.field_puntos_goles_en_contra
+field_name: field_puntos_goles_en_contra
+entity_type: node
+bundle: club
+label: 'Puntos/Goles en contra'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

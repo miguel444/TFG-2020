@@ -1,0 +1,22 @@
+uuid: 30066641-6b68-42dc-806a-b8e4e4259237
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: Z5OlIXrokdYQxOBMD2jIytPeqELDeMXTP47uyqNe528
+id: node.field_grupo
+field_name: field_grupo
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

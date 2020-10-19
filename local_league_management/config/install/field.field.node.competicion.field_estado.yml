@@ -1,0 +1,23 @@
+uuid: 0f212e71-c360-4b5a-ae08-81aca175ed39
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_estado
+    - node.type.competicion
+  module:
+    - options
+_core:
+  default_config_hash: cZcyqdWuanwYBSmFqfUUzp_uHWEH44vrpyragR-WtmA
+id: node.competicion.field_estado
+field_name: field_estado
+entity_type: node
+bundle: competicion
+label: Estado
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,22 @@
+uuid: a9da4632-db48-495c-9e7b-69ba4eaf3b9d
+langcode: es
+status: true
+dependencies:
+  module:
+    - datetime
+    - node
+_core:
+  default_config_hash: YryT3qAOWqf_3CDVsGwXXhP3nueCIdwiVcPPYXcMPag
+id: node.field_fecha_de_inicio_inscripcio
+field_name: field_fecha_de_inicio_inscripcio
+entity_type: node
+type: datetime
+settings:
+  datetime_type: date
+module: datetime
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

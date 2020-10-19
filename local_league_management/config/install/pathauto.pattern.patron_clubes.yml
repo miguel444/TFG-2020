@@ -1,0 +1,24 @@
+uuid: 48113cb7-fac6-4d3e-8e0a-1ead8b19b367
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: 7LuQErJ6JfzefgJFMDMs0Ih6ym_ctpSLCj9uNi8Hvm8
+id: patron_clubes
+label: 'Patrón clubes'
+type: 'canonical_entities:node'
+pattern: '/competiciones/[node:field_competicion:entity:title]/deportes/[node:field_deporte:entity:title]/clubes/[node:title]'
+selection_criteria:
+  b9f29d85-958c-446d-a7c1-492d196aa3b9:
+    id: node_type
+    bundles:
+      club: club
+    negate: false
+    context_mapping:
+      node: node
+    uuid: b9f29d85-958c-446d-a7c1-492d196aa3b9
+selection_logic: and
+weight: -5
+relationships: {  }

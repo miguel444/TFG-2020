@@ -1,0 +1,16 @@
+uuid: af50e533-d3bc-497d-9287-dcc35011ce83
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.becario
+  module:
+    - user
+_core:
+  default_config_hash: lfkvBADKHIfkgHoJmtENSOQcY0H1whcMBdu5oZ6vYnQ
+id: user_add_role_action.becario
+label: 'Añade el rol Becario al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: becario

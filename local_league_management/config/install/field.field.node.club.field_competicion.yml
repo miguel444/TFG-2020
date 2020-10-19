@@ -1,0 +1,30 @@
+uuid: 61b4a38f-b26a-4155-a400-cbba7c40782c
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_competicion
+    - node.type.club
+    - node.type.competicion
+_core:
+  default_config_hash: IKBHU3nou8kTHN2SjCIbc_V_BoBeTwvDgfUH0dfUpKM
+id: node.club.field_competicion
+field_name: field_competicion
+entity_type: node
+bundle: club
+label: Competicion
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      competicion: competicion
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

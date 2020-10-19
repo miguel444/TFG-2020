@@ -1,0 +1,30 @@
+uuid: 30c8fd61-dc45-47e9-b7f2-1be2f40a6eed
+langcode: es
+status: true
+dependencies:
+  config:
+    - views.view.listados_competiciones
+  module:
+    - ctools
+    - views
+id: views_block__listados_competiciones_block_2
+region: sidebar_first
+weight: -9
+provider: null
+plugin: 'views_block:listados_competiciones-block_2'
+settings:
+  id: 'views_block:listados_competiciones-block_2'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      deporte: deporte
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

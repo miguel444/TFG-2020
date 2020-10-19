@@ -1,0 +1,13 @@
+uuid: 05b820bd-8752-4eb2-99ca-ae4f92940fc4
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.club
+_core:
+  default_config_hash: lvTjiIVD7j0GD6qnhvbsYC7N2zhT1g-gjfgSY6qkBfs
+id: node.club
+target_entity_type_id: node
+target_bundle: club
+default_langcode: site_default
+language_alterable: false

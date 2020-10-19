@@ -1,0 +1,22 @@
+uuid: 2d6b9f24-860d-44f1-8eb2-f9e42b493d5a
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: R468yAt-wUhLl28uP-pg1hEA5bQR8NIi-Yedu8FMIOw
+id: node.field_numero_de_equipos
+field_name: field_numero_de_equipos
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

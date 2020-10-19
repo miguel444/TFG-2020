@@ -1,0 +1,16 @@
+uuid: 1802e9b0-bfd4-47ca-8a70-c1ef02209184
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.arbitro
+  module:
+    - user
+_core:
+  default_config_hash: QGLmxoTa-mSIOPjEzwtsWJarwNL3aR8UJbsTz-KVCyU
+id: user_remove_role_action.arbitro
+label: 'Elimina el rol Arbitro al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: arbitro

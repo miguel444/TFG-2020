@@ -1,0 +1,23 @@
+uuid: d152849f-47e5-4843-a768-d365ee14efac
+langcode: es
+status: true
+dependencies:
+  enforced:
+    module:
+      - local_league_management
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+_core:
+  default_config_hash: XAU_3YeMg6p-tqh4L6wqqMveQ122STuIOgQpqKD9odE
+name: Jugador
+type: jugador
+description: 'Representa a cada jugador perteneciente a un equipo'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

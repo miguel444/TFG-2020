@@ -1,0 +1,21 @@
+uuid: 2da856df-0e03-4541-9b99-0dfd7298f253
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_correo_electronico
+    - node.type.arbitro
+_core:
+  default_config_hash: HjEoUMwy7XcToKnXWUks7xG9fI00f_tPCN9G-gE6_QU
+id: node.arbitro.field_correo_electronico
+field_name: field_correo_electronico
+entity_type: node
+bundle: arbitro
+label: 'Correo electrónico'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

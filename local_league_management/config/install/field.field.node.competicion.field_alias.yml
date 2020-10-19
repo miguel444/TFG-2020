@@ -1,0 +1,21 @@
+uuid: 04450ef3-d8c3-4e27-be0b-235aedcb4efa
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_alias
+    - node.type.competicion
+_core:
+  default_config_hash: 3dKeM7SUQxjxU0Bi-FOLwtJ9BBMk5lCNtsK6Fw_ZXsw
+id: node.competicion.field_alias
+field_name: field_alias
+entity_type: node
+bundle: competicion
+label: Alias
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

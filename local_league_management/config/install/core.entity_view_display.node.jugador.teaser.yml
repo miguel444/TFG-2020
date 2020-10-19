@@ -1,0 +1,41 @@
+uuid: 04820d92-3170-4982-9ccf-e11357ec587c
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.jugador.field_apellidos
+    - field.field.node.jugador.field_capitan_jugador
+    - field.field.node.jugador.field_club
+    - field.field.node.jugador.field_correo_electronico
+    - field.field.node.jugador.field_dni
+    - field.field.node.jugador.field_expulsado
+    - field.field.node.jugador.field_ficha_deportiva
+    - field.field.node.jugador.field_goles
+    - field.field.node.jugador.field_partidos_disputados
+    - node.type.jugador
+  module:
+    - user
+_core:
+  default_config_hash: 1t7zKnlsyzcIrBqvA4itQIrpofbofMa3GS6Me92PcWQ
+id: node.jugador.teaser
+targetEntityType: node
+bundle: jugador
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_apellidos: true
+  field_capitan_jugador: true
+  field_club: true
+  field_correo_electronico: true
+  field_dni: true
+  field_expulsado: true
+  field_ficha_deportiva: true
+  field_goles: true
+  field_partidos_disputados: true
+  langcode: true

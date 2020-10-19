@@ -1,0 +1,25 @@
+uuid: 5174b0dd-5759-403c-9a24-e0170d9a3649
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.club
+  module:
+    - text
+_core:
+  default_config_hash: VQu9Q6ht3L0xBXH3wam7z6MbEyLu_RPo5mtxBeaUGvE
+id: node.club.body
+field_name: body
+entity_type: node
+bundle: club
+label: 'Descripcion del equipo'
+description: 'Breve descripción sobre el club creado'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

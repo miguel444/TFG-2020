@@ -1,0 +1,252 @@
+local_league_management.admin:
+  path: '/sport_tracker'
+  defaults:
+    _title: 'Sport tracker'
+    _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+
+  requirements:
+    _permission: 'acceder al modulo'
+
+local_league_management.clubes:
+  path: '/sport_tracker/clubes'
+  defaults:
+      _form: '\Drupal\local_league_management\Form\AddClubForm'
+      _title: 'Inscribir Club'
+  requirements:
+      _permission: 'añadir club'
+
+local_league_management.addclub:
+  path: '/sport_tracker/clubes/añadir_club'
+  defaults:
+    _form: '\Drupal\local_league_management\Form\AddClubForm'
+    _title: 'Inscribir Club'
+  requirements:
+    _permission: 'añadir club'
+
+local_league_management.addclubsport:
+  path: '/competiciones/{competicion}/deportes/{id}/clubes/añadir_club'
+  defaults:
+    _controller: '\Drupal\local_league_management\Controller\MyModuleController::add_club'
+  requirements:
+    _permission: 'añadir club deporte'
+
+local_league_management.editclub:
+  path: '/competiciones/{competicion}/deportes/{deporte}/clubes/{id}/editar_club'
+  defaults:
+    _controller: '\Drupal\local_league_management\Controller\MyModuleController::edit_club'
+  requirements:
+    _permission: 'editar club'
+
+local_league_management.copyclub:
+  path: '/competiciones/{competicion}/deportes/{deporte}/clubes/{id}/copiar_club'
+  defaults:
+    _controller: '\Drupal\local_league_management\Controller\MyModuleController::copy_club'
+  requirements:
+    _permission: 'copiar club'
+
+local_league_management.deleteclub:
+  path: '/competiciones/{competicion}/deportes/{deporte}/clubes/{id}/eliminar_club'
+  defaults:
+    _controller: '\Drupal\local_league_management\Controller\MyModuleController::delete_club'
+  requirements:
+    _permission: 'eliminar club'
+
+
+
+local_league_management.deportes:
+  path: '/sport_tracker/deportes/añadir_deporte'
+  defaults:
+    _form: '\Drupal\local_league_management\Form\AddSportForm'
+    _title: 'Añadir Deporte a Competición'
+
+local_league_management.addsport:
+  path: '/sport_tracker/deportes/añadir_deporte'
+  defaults:
+    _form: '\Drupal\local_league_management\Form\AddSportForm'
+    _title: 'Añadir Deporte a Competición'
+
+  requirements:
+    _permission: 'añadir deporte'
+
+local_league_management.adddeporte:
+  path: '/competiciones/{id}/deportes/añadir_deporte'
+  defaults:
+    _controller: '\Drupal\local_league_management\Controller\MyModuleController::add_deporte'
+
+  requirements:
+    _permission: 'añadir deporte competicion'
+
+local_league_management.editdeporte:
+  path: '/competiciones/{competicion}/deportes/{id}/editar_deporte'
+  defaults:
+    _controller: '\Drupal\local_league_management\Controller\MyModuleController::edit_deporte'
+  requirements:
+    _permission: 'editar deporte'
+
+local_league_management.deletedeporte:
+  path: '/competiciones/{competicion}/deportes/{id}/eliminar_deporte'
+  defaults:
+    _controller: '\Drupal\local_league_management\Controller\MyModuleController::delete_deporte'
+  requirements:
+    _permission: 'eliminar deporte'
+
+local_league_management.copydeporte:
+  path: '/competiciones/{competicion}/deportes/{id}/copiar_deporte'
+  defaults:
+    _controller: '\Drupal\local_league_management\Controller\MyModuleController::copy_deporte'
+  requirements:
+    _permission: 'copiar deporte'
+
+local_league_management.competiciones:
+  path: '/competiciones'
+  defaults:
+    _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+    _title: 'Competiciones'
+  requirements:
+    _permission: 'añadir competicion'
+
+local_league_management.addcompeticion:
+  path: '/competiciones/añadir_competicion'
+  defaults:
+    _form: '\Drupal\local_league_management\Form\AddCompeticionForm'
+    _title: 'Añadir Competición'
+  requirements:
+    _permission: 'añadir competicion'
+
+local_league_management.editcompeticion:
+  path: '/competiciones/{id}/editar_competicion'
+  defaults:
+    _controller: '\Drupal\local_league_management\Controller\MyModuleController::edit_competicion'
+  requirements:
+    _permission: 'editar competicion'
+
+local_league_management.deletecompeticion:
+  path: '/competiciones/{id}/eliminar_competicion'
+  defaults:
+    _controller: '\Drupal\local_league_management\Controller\MyModuleController::delete_competicion'
+  requirements:
+    _permission: 'eliminar competicion'
+
+
+local_league_management.jugadores:
+  path: '/sport_tracker/jugadores/añadir_jugador'
+  defaults:
+    _form: '\Drupal\local_league_management\Form\AddJugadorForm'
+    _title: 'Añadir Jugador'
+  requirements:
+    _permission: 'administrador competiciones'
+
+local_league_management.addjugador:
+  path: '/competiciones/jugadores/añadir_jugador'
+  defaults:
+    _form: '\Drupal\local_league_management\Form\AddJugadorForm'
+    _title: 'Añadir Jugador'
+  requirements:
+    _permission: 'administrador competiciones'
+
+local_league_management.addjugadorclub:
+  path: '/competiciones/{competicion}/deportes/{deporte}/clubes/{id}/jugadores/añadir_jugador'
+  defaults:
+    _controller: '\Drupal\local_league_management\Controller\MyModuleController::add_jugador'
+  requirements:
+    _permission: 'añadir jugador club'
+
+local_league_management.editjugador:
+  path: '/competiciones/{competicion}/deportes/{deporte}/clubes/{club}/jugadores/editar_jugador/{id}'
+  defaults:
+    _controller: '\Drupal\local_league_management\Controller\MyModuleController::edit_jugador'
+  requirements:
+    _permission: 'editar jugador'
+
+local_league_management.deletejugador:
+  path: '/competiciones/{competicion}/deportes/{deporte}/clubes/{club}/jugadores/eliminar_jugador/{id}'
+  defaults:
+    _controller: '\Drupal\local_league_management\Controller\MyModuleController::delete_jugador'
+  requirements:
+    _permission: 'eliminar jugador'
+
+local_league_management.addpartido:
+  path: '/competiciones/{competicion}/deportes/{id}/resultados/añadir_partido'
+  defaults:
+    _controller: '\Drupal\local_league_management\Controller\MyModuleController::add_partido'
+  requirements:
+    _permission: 'añadir partido'
+
+local_league_management.editpartido:
+  path: '/competiciones/{competicion}/deportes/{deporte}/resultados/editar_partido/{id}'
+  defaults:
+    _controller: '\Drupal\local_league_management\Controller\MyModuleController::edit_partido'
+  requirements:
+    _permission: 'editar partido'
+
+local_league_management.deletepartido:
+  path: '/competiciones/{competicion}/deportes/{deporte}/resultados/eliminar_partido/{id}'
+  defaults:
+    _controller: '\Drupal\local_league_management\Controller\MyModuleController::delete_partido'
+  requirements:
+    _permission: 'eliminar partido'
+
+
+local_league_management.addresultadopartido:
+  path: '/competiciones/{competicion}/deportes/{deporte}/resultados/rellenar_acta/{id}'
+  defaults:
+    _controller: '\Drupal\local_league_management\Controller\MyModuleController::rellenar_acta'
+  requirements:
+    _permission: 'añadir resultado partido'
+
+local_league_management.listcompeticiones:
+  path: '/competiciones/listado'
+
+  requirements:
+    _permission: 'access content'
+
+
+local_league_management.adduser:
+  path: '/competiciones/usuarios/añadir_usuario'
+  defaults:
+    _form: '\Drupal\local_league_management\Form\CreateUser'
+
+  requirements:
+    _permission: 'añadir usuario'
+
+local_league_management.edituser:
+  path: '/competiciones/usuarios/editar_usuario/{id}'
+  defaults:
+    _controller: '\Drupal\local_league_management\Controller\MyModuleController::edit_user'
+
+  requirements:
+    _permission: 'editar usuario'
+
+local_league_management.deleteuser:
+  path: '/competiciones/usuarios/eliminar_usuario/{id}'
+  defaults:
+    _controller: '\Drupal\local_league_management\Controller\MyModuleController::delete_user'
+
+  requirements:
+    _permission: 'eliminar usuario'
+
+local_league_management.addarbitro:
+  path: '/competiciones/arbitros/añadir_arbitro'
+  defaults:
+    _form: '\Drupal\local_league_management\Form\AddArbitro'
+
+  requirements:
+    _permission: 'añadir arbitro'
+
+local_league_management.editarbitro:
+  path: '/competiciones/arbitros/editar_arbitro/{id}'
+  defaults:
+    _controller: '\Drupal\local_league_management\Controller\MyModuleController::edit_arbitro'
+
+  requirements:
+    _permission: 'editar arbitro'
+
+local_league_management.deletearbitro:
+  path: '/competiciones/arbitros/eliminar_arbitro/{id}'
+  defaults:
+    _controller: '\Drupal\local_league_management\Controller\MyModuleController::delete_arbitro'
+
+  requirements:
+    _permission: 'eliminar arbitro'
+
+

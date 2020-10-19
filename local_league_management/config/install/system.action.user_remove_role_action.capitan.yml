@@ -1,0 +1,16 @@
+uuid: f6777ccc-e16f-412d-9898-846b17d3c22e
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.capitan
+  module:
+    - user
+_core:
+  default_config_hash: Dji7tt-h3H1DsEW3TKdhDAL8V1x7W6JcW4Qb1dk6CAo
+id: user_remove_role_action.capitan
+label: 'Elimina el rol Capitán al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: capitan

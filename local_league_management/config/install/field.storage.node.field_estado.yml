@@ -1,0 +1,29 @@
+uuid: d82b249c-2b96-4344-bbe3-e5dfbd6b36b3
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+    - options
+_core:
+  default_config_hash: N1U4X4SFU--ans0XY_3TUc_bV31Jo6gLzQSwmx65z_Q
+id: node.field_estado
+field_name: field_estado
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: Activa
+      label: Activa
+    -
+      value: 'No activa'
+      label: 'No activa'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

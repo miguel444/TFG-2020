@@ -1,0 +1,23 @@
+uuid: f1c1827b-aef8-4566-8a5b-34195c98a4c2
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: dQEDCYAJ6rZthkTvlU8rSlNvSa-VreCiATUpntJ3R58
+id: node.field_lugar
+field_name: field_lugar
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

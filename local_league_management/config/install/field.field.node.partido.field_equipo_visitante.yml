@@ -1,0 +1,30 @@
+uuid: c60c994c-d24e-449e-b726-d9c8d74f640b
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_equipo_visitante
+    - node.type.club
+    - node.type.partido
+_core:
+  default_config_hash: TseGI3NqqGwLjtPWr4Pkfo0r81TV3ZumXhJI7rs3NFk
+id: node.partido.field_equipo_visitante
+field_name: field_equipo_visitante
+entity_type: node
+bundle: partido
+label: 'Equipo visitante'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      club: club
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

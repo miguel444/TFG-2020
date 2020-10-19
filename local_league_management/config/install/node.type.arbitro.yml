@@ -1,0 +1,20 @@
+uuid: dd86fe15-a5d5-4235-90fc-6220f3b2faea
+langcode: es
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+_core:
+  default_config_hash: eFzh0Bk4cJ3XJDJ0dTv8RSub_dtP62eWHcj7U5n21B0
+name: Arbitro
+type: arbitro
+description: ''
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

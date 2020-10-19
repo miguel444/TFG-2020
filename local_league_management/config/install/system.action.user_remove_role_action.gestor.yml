@@ -1,0 +1,16 @@
+uuid: 95caaec0-8813-43f8-a8bd-1994508ce556
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.gestor
+  module:
+    - user
+_core:
+  default_config_hash: 1taEv3aBrL_OlB9-I-QtpQIzt62GBpprWcJAsBWzdio
+id: user_remove_role_action.gestor
+label: 'Elimina el rol Gestor al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: gestor

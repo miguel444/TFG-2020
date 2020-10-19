@@ -1,0 +1,99 @@
+uuid: b5d58147-53dc-4e56-a4bc-ffe11b2ab5ac
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.node.competicion.body
+    - field.field.node.competicion.field_alias
+    - field.field.node.competicion.field_ano_academico
+    - field.field.node.competicion.field_estado
+    - field.field.node.competicion.field_image
+    - field.field.node.competicion.field_numero_de_deportes
+    - field.field.node.competicion.field_reglamento
+    - image.style.thumbnail
+    - node.type.competicion
+  module:
+    - file
+    - image
+    - text
+_core:
+  default_config_hash: ERYH0NL6hVpytxD5pIHdBfUHxBC_NeANDIBWMJJ8b2I
+id: node.competicion.default
+targetEntityType: node
+bundle: competicion
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 1
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+    region: content
+  created:
+    type: datetime_timestamp
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_alias:
+    weight: 31
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_ano_academico:
+    weight: 27
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_estado:
+    weight: 30
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_image:
+    weight: 29
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_numero_de_deportes:
+    weight: 32
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_reglamento:
+    weight: 26
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  langcode: true
+  path: true
+  promote: true
+  status: true
+  sticky: true
+  uid: true

@@ -1,0 +1,22 @@
+uuid: c8b3b59c-b115-4982-b07a-c86c98a0c17e
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.arbitro
+id: node.arbitro.status
+field_name: status
+entity_type: node
+bundle: arbitro
+label: Published
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

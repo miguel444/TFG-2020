@@ -1,0 +1,16 @@
+uuid: 0ff67818-47d2-40ef-bc7f-815a5ff86e23
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.becario
+  module:
+    - user
+_core:
+  default_config_hash: rm8RsggxQ3dbVUQSvr4MpSXc2HUhEaEd9r_CCm2LJms
+id: user_remove_role_action.becario
+label: 'Elimina el rol Becario al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: becario

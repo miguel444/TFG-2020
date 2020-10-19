@@ -1,0 +1,25 @@
+uuid: 9191be57-42f3-4702-9038-0f72e50334ee
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_numero_de_equipos
+    - node.type.deporte
+_core:
+  default_config_hash: YhVRofycQ1HTJmvtmZ_Y2HF6b8FB0uIOMvpFgOLf3eo
+id: node.deporte.field_numero_de_equipos
+field_name: field_numero_de_equipos
+entity_type: node
+bundle: deporte
+label: 'Numero de equipos'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

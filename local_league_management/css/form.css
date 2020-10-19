@@ -1,0 +1,65 @@
+
+#edit-validar  {
+
+  background-color: #ffa5a2;
+
+
+}
+
+#validar{
+  margin-top: 25px;
+  text-align: center;
+}
+
+#edit-submit{
+  margin-top: 25px;
+  text-align: center;
+
+}
+
+#edit-partido{
+  margin: 15px;
+  text-align: center;
+}
+
+#club_local {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.club{
+
+  margin-right:10px;
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+#fecha_competicion{
+  display: flex;
+  justify-content: space-between;
+
+}
+
+
+#fecha_inscripcion{
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.confirmacion_add{
+  text-align: center;
+}
+
+.reglamento{
+  margin-bottom: 25px;
+
+}
+
+#año{
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+

@@ -1,0 +1,25 @@
+uuid: 3bc59b1f-93f8-480c-a381-12a88d1f951e
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.arbitro
+  module:
+    - text
+_core:
+  default_config_hash: sfRsdg6otmNjV9S4FC200fHAX2cZFQiFVFaRTQm7K6Q
+id: node.arbitro.body
+field_name: body
+entity_type: node
+bundle: arbitro
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

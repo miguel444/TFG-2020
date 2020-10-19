@@ -1,0 +1,21 @@
+uuid: 1f811c85-9c7b-4841-966e-ade230fd4900
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_correo_electronico
+    - node.type.jugador
+_core:
+  default_config_hash: ldeS8IELu0qxMG6Blgfzq0FVetWdZ-26UgkL90GGyKs
+id: node.jugador.field_correo_electronico
+field_name: field_correo_electronico
+entity_type: node
+bundle: jugador
+label: 'Correo electrónico'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

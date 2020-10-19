@@ -1,0 +1,22 @@
+uuid: e9d77eda-9bd1-4062-a975-f6299cbdca85
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: wsy3CzU-O8e0G_dWDmV8eD92YwDYtLOFGPGz3rEmgJI
+id: node.field_diferencia_puntos_goles
+field_name: field_diferencia_puntos_goles
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

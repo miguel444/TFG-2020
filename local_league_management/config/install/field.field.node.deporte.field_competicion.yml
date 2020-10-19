@@ -1,0 +1,30 @@
+uuid: 549ac632-a5fe-4fe0-bf02-64740d3ef630
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_competicion
+    - node.type.competicion
+    - node.type.deporte
+_core:
+  default_config_hash: XuozNq1BZZtoJmb4BQsD0GoD5PZpDV5xIBkwCL3tdgc
+id: node.deporte.field_competicion
+field_name: field_competicion
+entity_type: node
+bundle: deporte
+label: Competicion
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      competicion: competicion
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

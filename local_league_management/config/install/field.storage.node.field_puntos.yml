@@ -1,0 +1,22 @@
+uuid: 4a24d2cf-1a40-4db6-80c8-687dda402611
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: UdQ_NKpOX5E2-T48NFI8saspLa66ReNgrO1KKRSrcMs
+id: node.field_puntos
+field_name: field_puntos
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

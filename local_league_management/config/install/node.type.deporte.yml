@@ -1,0 +1,20 @@
+uuid: ca0406b2-1a4b-4f66-80ba-0740ae9569f3
+langcode: es
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+_core:
+  default_config_hash: 6b_RSp0ereKZo2-IRxA2ktxZe--LMy1EHJ0OysJmycQ
+name: Deporte
+type: deporte
+description: ''
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

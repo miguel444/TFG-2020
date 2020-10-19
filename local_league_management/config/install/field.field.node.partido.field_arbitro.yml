@@ -1,0 +1,30 @@
+uuid: ef081d13-e4c8-414d-a9ed-2d80f45b5c6b
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_arbitro
+    - node.type.partido
+_core:
+  default_config_hash: j9pXGpMiQ3I_fimOFhmOTNuBZ0hC5snEoMOLscajn7I
+id: node.partido.field_arbitro
+field_name: field_arbitro
+entity_type: node
+bundle: partido
+label: Arbitro
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    include_anonymous: true
+    filter:
+      type: _none
+    target_bundles: null
+    sort:
+      field: _none
+    auto_create: false
+field_type: entity_reference

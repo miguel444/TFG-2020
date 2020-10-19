@@ -1,0 +1,20 @@
+uuid: 7cabfd2d-33ff-4c8b-9cbf-5e2d0f9954f5
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: 00p0TjY2b85OyjHQqtWkvNyTSNOagwzIJOD5MFgtRl4
+id: node.field_expulsado
+field_name: field_expulsado
+entity_type: node
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

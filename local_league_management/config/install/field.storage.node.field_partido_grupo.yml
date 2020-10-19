@@ -1,0 +1,22 @@
+uuid: 9daf6950-120f-41ed-9b9c-a839774c0865
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: xgfjB6BNK0UoRwl4MmHf2gt4Co1WFAZJeM415qI4J5w
+id: node.field_partido_grupo
+field_name: field_partido_grupo
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

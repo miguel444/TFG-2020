@@ -1,0 +1,25 @@
+uuid: 22ae9df8-6431-4643-a6c9-c52a084f5585
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_puntos
+    - node.type.club
+_core:
+  default_config_hash: AMdNZguu4rxmaPJMBQyYI5bmmROGWA0HXWZpy451svA
+id: node.club.field_puntos
+field_name: field_puntos
+entity_type: node
+bundle: club
+label: Puntos
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

@@ -1,0 +1,129 @@
+
+acceder al modulo:
+  title: 'Acceder al módulo de competiciones'
+  restrict access: true
+
+añadir club:
+  title: 'Añadir club'
+  restrict access: true
+
+
+añadir deporte:
+  title: 'Añadir deporte'
+  restrict access: true
+
+añadir competicion:
+  title: 'Añadir competición'
+  restrict access: true
+
+añadir resultado partido:
+  title: 'Añadir resultado partido'
+  restrict access: true
+
+añadir entidad:
+  title: 'Añadir nodo a la entidad'
+  restrict access: true
+
+editar entidad:
+  title: 'Editar entidad'
+  restrict access: true
+
+copiar entidad:
+  title: 'Copiar entidad'
+  restrict access: true
+
+
+eliminar entidad:
+  title: 'Eliminar entidad'
+  restrict access: true
+
+añadir deporte competicion:
+  title: 'Añadir deporte a competicion'
+  restrict access: true
+
+editar competicion:
+  title: 'Editar  competicion'
+  restrict access: true
+
+eliminar competicion:
+  title: 'Eliminar  competicion'
+  restrict access: true
+
+editar deporte:
+  title: 'Editar  deporte'
+  restrict access: true
+
+eliminar deporte:
+  title: 'Eliminar  deporte'
+  restrict access: true
+
+copiar deporte:
+  title: 'Copiar  deporte'
+  restrict access: true
+
+añadir club deporte:
+  title: 'Añadir club a deporte'
+  restrict access: true
+
+añadir jugador club:
+  title: 'Añadir jugador a club'
+  restrict access: true
+
+editar jugador :
+  title: 'Editar jugador'
+  restrict access: true
+
+eliminar jugador :
+  title: 'Eliminar jugador'
+  restrict access: true
+
+editar club:
+  title: 'Editar club'
+  restrict access: true
+
+eliminar club:
+  title: 'Eliminar club'
+  restrict access: true
+
+copiar club:
+  title: 'Copiar club'
+  restrict access: true
+
+
+añadir partido:
+  title: 'Añadir partido a deporte'
+  restrict access: true
+
+editar partido :
+  title: 'Editar partido'
+  restrict access: true
+
+eliminar partido :
+  title: 'Eliminar partido'
+  restrict access: true
+
+añadir usuario:
+  title: 'Añadir usuario al sistema'
+  restrict access: true
+
+editar usuario :
+  title: 'Editar usuario'
+  restrict access: true
+
+eliminar usuario :
+  title: 'Eliminar usuario'
+  restrict access: true
+
+añadir arbitro:
+  title: 'Añadir arbitro'
+  restrict access: true
+
+editar arbitro :
+  title: 'Editar arbitro'
+  restrict access: true
+
+eliminar arbitro :
+  title: 'Eliminar arbitro'
+  restrict access: true
+
+

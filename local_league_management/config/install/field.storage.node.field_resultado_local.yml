@@ -1,0 +1,22 @@
+uuid: 9fd4d237-02f8-4aa3-a881-64b63bad125e
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: P2kf7dNglsb-cc2nCacF6Hp_KeQHHYsXgPEaLhObVCk
+id: node.field_resultado_local
+field_name: field_resultado_local
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

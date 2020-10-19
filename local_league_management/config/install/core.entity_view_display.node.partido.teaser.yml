@@ -1,0 +1,55 @@
+uuid: 63b520fc-df2a-473d-ba7c-6496e7f5c55b
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.partido.body
+    - field.field.node.partido.field_arbitro
+    - field.field.node.partido.field_deporte
+    - field.field.node.partido.field_equipo_local
+    - field.field.node.partido.field_equipo_visitante
+    - field.field.node.partido.field_estado_partido
+    - field.field.node.partido.field_fase
+    - field.field.node.partido.field_fecha_partido
+    - field.field.node.partido.field_lugar
+    - field.field.node.partido.field_partido_grupo
+    - field.field.node.partido.field_resultado_local
+    - field.field.node.partido.field_resultado_visitante
+    - node.type.partido
+  module:
+    - text
+    - user
+_core:
+  default_config_hash: y98EGAW5bKDFXhl5jHMSzHBZBMGP4-bNMHaWqGmZhyI
+id: node.partido.teaser
+targetEntityType: node
+bundle: partido
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_arbitro: true
+  field_deporte: true
+  field_equipo_local: true
+  field_equipo_visitante: true
+  field_estado_partido: true
+  field_fase: true
+  field_fecha_partido: true
+  field_lugar: true
+  field_partido_grupo: true
+  field_resultado_local: true
+  field_resultado_visitante: true
+  langcode: true

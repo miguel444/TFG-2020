@@ -1,0 +1,76 @@
+uuid: 65425bf6-43e7-4cf6-b4da-46d2a97cd396
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.node.arbitro.body
+    - field.field.node.arbitro.field_apellidos
+    - field.field.node.arbitro.field_arbitro_user
+    - field.field.node.arbitro.field_correo_electronico
+    - field.field.node.arbitro.field_dni
+    - field.field.node.arbitro.field_numero_colegiado
+    - node.type.arbitro
+  module:
+    - text
+    - user
+_core:
+  default_config_hash: JqMqAWntncl2UMC5zft_iKJ_eo9WSnMFiNMAuVldYjY
+id: node.arbitro.default
+targetEntityType: node
+bundle: arbitro
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_apellidos:
+    weight: 102
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_arbitro_user:
+    weight: 106
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_correo_electronico:
+    weight: 103
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_dni:
+    weight: 104
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_numero_colegiado:
+    weight: 105
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true

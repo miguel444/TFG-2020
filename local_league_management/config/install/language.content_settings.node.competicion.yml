@@ -1,0 +1,13 @@
+uuid: bd778247-2159-4341-8311-0f20f00596d9
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.competicion
+_core:
+  default_config_hash: d95yqv0fUYKkv1ByDHxmAFKNvaCf9C9Bhb0woyCmvig
+id: node.competicion
+target_entity_type_id: node
+target_bundle: competicion
+default_langcode: site_default
+language_alterable: false

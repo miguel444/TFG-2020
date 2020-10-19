@@ -1,0 +1,24 @@
+uuid: 5eb57d89-ee08-4d32-be02-d895f4bb8d27
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.jugador
+_core:
+  default_config_hash: z8ILE6RKOBjL88LA8KQoO1RN0xZB8ipp7fCvUK79eDo
+id: node.jugador.promote
+field_name: promote
+entity_type: node
+bundle: jugador
+label: 'Promocionado a la página principal'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

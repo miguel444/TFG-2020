@@ -1,0 +1,13 @@
+uuid: 9183a963-8cc5-4930-b053-97d43eb3a531
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.deporte
+_core:
+  default_config_hash: QXNglJY4QJD64lcAl5atUVc1BMS-P4yAYSD22LDahtc
+id: node.deporte
+target_entity_type_id: node
+target_bundle: deporte
+default_langcode: site_default
+language_alterable: false

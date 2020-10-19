@@ -1,0 +1,30 @@
+uuid: d6632051-1e33-440a-8222-1534c25732ad
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_club
+    - node.type.club
+    - node.type.jugador
+_core:
+  default_config_hash: ffGPYP0PSBd1sItUyEE2SYchZjqI6zrtS5Q3xpkfH2o
+id: node.jugador.field_club
+field_name: field_club
+entity_type: node
+bundle: jugador
+label: Club
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      club: club
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

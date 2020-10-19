@@ -1,0 +1,22 @@
+uuid: 53d25e2a-84a4-4e15-9412-c0e8c7ceeec6
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: zWyerNdXIrMHaf407wqBj_noa3ONs6QJ6TA9QyZRosE
+id: node.field_grupo_club
+field_name: field_grupo_club
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

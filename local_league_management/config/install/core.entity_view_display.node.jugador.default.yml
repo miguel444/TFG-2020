@@ -1,0 +1,61 @@
+uuid: 8f384b17-e691-4500-801c-fc434179aeb4
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.node.jugador.field_apellidos
+    - field.field.node.jugador.field_capitan_jugador
+    - field.field.node.jugador.field_club
+    - field.field.node.jugador.field_correo_electronico
+    - field.field.node.jugador.field_dni
+    - field.field.node.jugador.field_expulsado
+    - field.field.node.jugador.field_ficha_deportiva
+    - field.field.node.jugador.field_goles
+    - field.field.node.jugador.field_partidos_disputados
+    - node.type.jugador
+  module:
+    - user
+_core:
+  default_config_hash: 7EqoWLs7auh7zgcqNBaDli3thPJavwL6EUW-P88hAUM
+id: node.jugador.default
+targetEntityType: node
+bundle: jugador
+mode: default
+content:
+  field_expulsado:
+    weight: 1
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_goles:
+    weight: 2
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_partidos_disputados:
+    weight: 3
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+hidden:
+  field_apellidos: true
+  field_capitan_jugador: true
+  field_club: true
+  field_correo_electronico: true
+  field_dni: true
+  field_ficha_deportiva: true
+  langcode: true
+  links: true

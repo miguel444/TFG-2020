@@ -1,0 +1,27 @@
+uuid: 34f0bd31-05a7-4ea4-b7e0-fa15626599e2
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_numero_de_jugadores
+    - node.type.club
+_core:
+  default_config_hash: JpVv0pZB0Ohw1jxKDOqpZFs5Go1fhTR4glNwAoPm5qI
+id: node.club.field_numero_de_jugadores
+field_name: field_numero_de_jugadores
+entity_type: node
+bundle: club
+label: 'Numero de jugadores'
+description: 'Se enumera los diferentes jugadores que componen el equipo'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

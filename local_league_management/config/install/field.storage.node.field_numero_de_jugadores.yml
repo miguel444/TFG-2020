@@ -1,0 +1,22 @@
+uuid: fc2cdb7c-d8ae-44ab-b08d-07ccd47f188c
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: QvWK9Lj2bfk1Z5D5GncveXFbEkNkuSgL0xKt46nETJA
+id: node.field_numero_de_jugadores
+field_name: field_numero_de_jugadores
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

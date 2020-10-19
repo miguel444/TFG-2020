@@ -1,0 +1,22 @@
+uuid: 902741d0-4e2d-4540-8d14-6d83f033eebc
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: YutvxIwuvrWvx5KJtaPuxJpz68_2Rgs4e5iotsKFXcA
+id: node.field_goles
+field_name: field_goles
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

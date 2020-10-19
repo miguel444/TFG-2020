@@ -1,0 +1,22 @@
+uuid: 7212ef17-deb9-4fdb-b025-056db5078b88
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: leFuoa_15OKGP3KijI7jpWkVSAwwWYqv3D3Yuapc59s
+id: node.field_dni
+field_name: field_dni
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

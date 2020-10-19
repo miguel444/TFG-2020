@@ -1,0 +1,25 @@
+uuid: 5874df9a-fcf7-4ecd-a900-bbc9a9f2f89f
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.competicion
+  module:
+    - text
+_core:
+  default_config_hash: cFRPhq7UctLUxG5bKKL2HaRL7toCEyLaZPzGq__CywE
+id: node.competicion.body
+field_name: body
+entity_type: node
+bundle: competicion
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

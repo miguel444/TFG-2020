@@ -1,0 +1,25 @@
+uuid: 064bb23a-cf23-47d0-9757-c76cdd79c9eb
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_grupo
+    - node.type.club
+_core:
+  default_config_hash: 0vQExJfYWpMxlTwp4LHQ-JjCoLA4McLEh3VoC-L7750
+id: node.club.field_grupo
+field_name: field_grupo
+entity_type: node
+bundle: club
+label: Grupo
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 1
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

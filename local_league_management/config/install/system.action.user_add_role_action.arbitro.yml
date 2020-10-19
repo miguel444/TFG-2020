@@ -1,0 +1,16 @@
+uuid: bfc8b080-20fe-418c-9f7e-81bda5b9d772
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.arbitro
+  module:
+    - user
+_core:
+  default_config_hash: VYTv_9gkdDXRMfH5zsSZZTr7Jc3-sRriIhS27xhHBxU
+id: user_add_role_action.arbitro
+label: 'Añade el rol Arbitro al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: arbitro

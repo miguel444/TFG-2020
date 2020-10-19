@@ -1,0 +1,15 @@
+uuid: cc8cb0e2-1bfb-4f66-9c8f-67f163499668
+langcode: es
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 5x5Gd8yEW0XIOS5Y4C6XGSTQFeCSBC4kmMnjcMMY0zQ
+id: capitan
+label: Capitán
+weight: 6
+is_admin: null
+permissions:
+  - 'añadir jugador club'
+  - 'editar jugador'
+  - 'eliminar jugador'
+  - 'view own unpublished content'

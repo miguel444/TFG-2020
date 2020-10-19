@@ -1,0 +1,23 @@
+uuid: cf2e6445-16a0-41f3-899d-8e212d31eb8b
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_fecha_de_inicio_inscripcio
+    - node.type.deporte
+  module:
+    - datetime
+_core:
+  default_config_hash: t4hx6axqadCe41a1Re3v2YSYBz_fya1AcN-WS3awzYI
+id: node.deporte.field_fecha_de_inicio_inscripcio
+field_name: field_fecha_de_inicio_inscripcio
+entity_type: node
+bundle: deporte
+label: 'Fecha de inicio inscripción'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

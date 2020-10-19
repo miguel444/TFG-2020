@@ -1,0 +1,20 @@
+uuid: 76e7005b-99a1-4d39-a18d-101abd591fb4
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: GJsEivHv9H7dhjCKszKjXtKNfFXoYjmmu5QTUUzKzBc
+id: node.field_correo_electronico
+field_name: field_correo_electronico
+entity_type: node
+type: email
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

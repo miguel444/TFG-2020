@@ -1,0 +1,22 @@
+uuid: ad2ec4ce-be00-48f2-81fe-8cf2288b3301
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: 3F4DaWd0BKiWIHtqQhZKV3zAQa1OhGPyUhPR5ZetXQQ
+id: node.field_ano_academico
+field_name: field_ano_academico
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

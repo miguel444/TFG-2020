@@ -1,0 +1,69 @@
+uuid: 96cc04c5-a627-450d-a9cf-5e8b1036769c
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.deporte.body
+    - field.field.node.deporte.field_alias
+    - field.field.node.deporte.field_competicion
+    - field.field.node.deporte.field_fecha_de_fin
+    - field.field.node.deporte.field_fecha_de_fin_inscripcion
+    - field.field.node.deporte.field_fecha_de_inicio
+    - field.field.node.deporte.field_fecha_de_inicio_inscripcio
+    - field.field.node.deporte.field_numero_de_equipos
+    - field.field.node.deporte.field_numero_maximo_de_equipos
+    - node.type.deporte
+  module:
+    - text
+    - user
+_core:
+  default_config_hash: swjC9k6UUo_MlvUNw53s7NrWV77jw-Zof9iq4lMDC5E
+id: node.deporte.teaser
+targetEntityType: node
+bundle: deporte
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  jornadas_en_deporte_entity_view_1:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  jornadas_en_deporte_entity_view_2:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  jornadas_en_deporte_entity_view_3:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  jornadas_en_deporte_entity_view_4:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_alias: true
+  field_competicion: true
+  field_fecha_de_fin: true
+  field_fecha_de_fin_inscripcion: true
+  field_fecha_de_inicio: true
+  field_fecha_de_inicio_inscripcio: true
+  field_numero_de_equipos: true
+  field_numero_maximo_de_equipos: true
+  langcode: true

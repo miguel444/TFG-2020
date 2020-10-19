@@ -1,0 +1,25 @@
+uuid: 16548172-0efe-4825-aa83-b48b5bac37c5
+langcode: es
+status: true
+dependencies:
+  module:
+    - file
+    - node
+_core:
+  default_config_hash: _zHPaQHtkFM6CIB_51KJb61WhB7tIToK6JUzIO1Ge-Q
+id: node.field_reglamento
+field_name: field_reglamento
+entity_type: node
+type: file
+settings:
+  display_field: false
+  display_default: false
+  uri_scheme: public
+  target_type: file
+module: file
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

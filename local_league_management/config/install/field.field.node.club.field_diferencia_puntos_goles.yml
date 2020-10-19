@@ -1,0 +1,25 @@
+uuid: 1b8f1486-a2fb-4a70-b1a2-201f09b179f4
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_diferencia_puntos_goles
+    - node.type.club
+_core:
+  default_config_hash: 3TZjq59eHbDrEzhxpMfWDRVIw1eIGGicKTo-3kRkytg
+id: node.club.field_diferencia_puntos_goles
+field_name: field_diferencia_puntos_goles
+entity_type: node
+bundle: club
+label: 'Diferencia Puntos/Goles'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

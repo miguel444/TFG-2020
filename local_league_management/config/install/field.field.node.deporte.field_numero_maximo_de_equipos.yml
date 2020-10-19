@@ -1,0 +1,25 @@
+uuid: 75332e83-85d3-468e-8fb2-9139b2f368ee
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_numero_maximo_de_equipos
+    - node.type.deporte
+_core:
+  default_config_hash: ISzaoyh1vaHJVaLv5Ep8NhGl8VKLNmsvE__9tlFbtEU
+id: node.deporte.field_numero_maximo_de_equipos
+field_name: field_numero_maximo_de_equipos
+entity_type: node
+bundle: deporte
+label: 'Número máximo de equipos'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

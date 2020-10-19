@@ -1,0 +1,30 @@
+uuid: ae946b4a-cbe1-459f-9dff-803a3b38e411
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_capitan
+    - node.type.club
+_core:
+  default_config_hash: m2WbkYD_glgkT1IRPtEB0v3CQoQW-VpX25XAtHfFAlI
+id: node.club.field_capitan
+field_name: field_capitan
+entity_type: node
+bundle: club
+label: Capitán
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    include_anonymous: true
+    filter:
+      type: _none
+    target_bundles: null
+    sort:
+      field: _none
+    auto_create: false
+field_type: entity_reference

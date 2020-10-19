@@ -1,0 +1,21 @@
+uuid: f698c8c7-c638-41ea-8bf3-5fbdac126933
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_lugar
+    - node.type.partido
+_core:
+  default_config_hash: TnoQLEX2TDOWbISo_2pyTTuaWbtDsI71PTdCspWZVBI
+id: node.partido.field_lugar
+field_name: field_lugar
+entity_type: node
+bundle: partido
+label: Lugar
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

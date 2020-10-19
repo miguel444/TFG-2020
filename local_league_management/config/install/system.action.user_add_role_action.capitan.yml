@@ -1,0 +1,16 @@
+uuid: 0d904117-0146-4bbf-b39f-9e5d88319c67
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.capitan
+  module:
+    - user
+_core:
+  default_config_hash: zc38IWk-OgVDOMjDNJrHGdaukHM_Jyu2me7oYmgNtZw
+id: user_add_role_action.capitan
+label: 'Añade el rol Capitán al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: capitan

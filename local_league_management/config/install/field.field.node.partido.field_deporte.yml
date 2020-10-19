@@ -1,0 +1,30 @@
+uuid: 0ef4fd58-1cfe-40dd-84b7-a6969dad91bd
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_deporte
+    - node.type.deporte
+    - node.type.partido
+_core:
+  default_config_hash: 5Ju8UMU9-3w6U0M79r4V6eN3Fq_cdQ94kQtUuKLXCpA
+id: node.partido.field_deporte
+field_name: field_deporte
+entity_type: node
+bundle: partido
+label: Deporte
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      deporte: deporte
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,25 @@
+uuid: e9d689b9-4034-4ab6-886c-5cd69ba692bd
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_estado_club
+    - node.type.club
+  module:
+    - options
+_core:
+  default_config_hash: DLqY5CEbNoP8kqkBj9FvbkT-fC_ADuSoN4t5OVWTmJs
+id: node.club.field_estado_club
+field_name: field_estado_club
+entity_type: node
+bundle: club
+label: 'Estado '
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: Desactivado
+default_value_callback: ''
+settings: {  }
+field_type: list_string

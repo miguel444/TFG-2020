@@ -1,0 +1,23 @@
+uuid: 43f45c7b-c506-4978-ab30-ed4130f9c265
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_fecha_de_fin
+    - node.type.deporte
+  module:
+    - datetime
+_core:
+  default_config_hash: FCFN8FO8VdvSC4pPtYfcrOrGYHlhQnjs2vtgjmNMda0
+id: node.deporte.field_fecha_de_fin
+field_name: field_fecha_de_fin
+entity_type: node
+bundle: deporte
+label: 'Fecha de fin'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

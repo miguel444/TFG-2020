@@ -1,0 +1,30 @@
+uuid: 1ab03c87-f2e6-4164-8ec3-4fa1bc1d569c
+langcode: es
+status: true
+dependencies:
+  config:
+    - views.view.listados_competiciones
+  module:
+    - system
+    - views
+  theme:
+    - bootstrap4
+id: views_block__listados_competiciones_block_3_2
+theme: bootstrap4
+region: content
+weight: -5
+provider: null
+plugin: 'views_block:listados_competiciones-block_3'
+settings:
+  id: 'views_block:listados_competiciones-block_3'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: /competiciones
+    negate: false
+    context_mapping: {  }

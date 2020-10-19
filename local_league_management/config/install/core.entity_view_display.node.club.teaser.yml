@@ -1,0 +1,55 @@
+uuid: 2c991c11-fe13-479d-9037-de2289d1154f
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.club.body
+    - field.field.node.club.field_alias
+    - field.field.node.club.field_capitan
+    - field.field.node.club.field_competicion
+    - field.field.node.club.field_deporte
+    - field.field.node.club.field_diferencia_puntos_goles
+    - field.field.node.club.field_estado_club
+    - field.field.node.club.field_grupo
+    - field.field.node.club.field_numero_de_jugadores
+    - field.field.node.club.field_puntos
+    - field.field.node.club.field_puntos_goles_a_favor
+    - field.field.node.club.field_puntos_goles_en_contra
+    - node.type.club
+  module:
+    - text
+    - user
+_core:
+  default_config_hash: n9GskQ-G6jGBoGQ6xRSiFsWiEjB5sB-LlS5yP8IrHgU
+id: node.club.teaser
+targetEntityType: node
+bundle: club
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_alias: true
+  field_capitan: true
+  field_competicion: true
+  field_deporte: true
+  field_diferencia_puntos_goles: true
+  field_estado_club: true
+  field_grupo: true
+  field_numero_de_jugadores: true
+  field_puntos: true
+  field_puntos_goles_a_favor: true
+  field_puntos_goles_en_contra: true
+  langcode: true

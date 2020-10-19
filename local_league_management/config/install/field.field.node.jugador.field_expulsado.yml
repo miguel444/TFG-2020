@@ -1,0 +1,25 @@
+uuid: 41e3f481-f2a0-4407-a038-4fb6dda0ce02
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_expulsado
+    - node.type.jugador
+_core:
+  default_config_hash: s7_yaFPnlox0NNW3rA22HRYp5XE1Rzysq8KSh74LR3Y
+id: node.jugador.field_expulsado
+field_name: field_expulsado
+entity_type: node
+bundle: jugador
+label: Expulsado
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Si
+  off_label: 'No'
+field_type: boolean

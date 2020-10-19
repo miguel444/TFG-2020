@@ -1,0 +1,41 @@
+uuid: c6a20a08-8488-4d0a-b694-cab462a77934
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+    - options
+_core:
+  default_config_hash: fOXQIloS9sxmuNlU1q9hTbcWO1W3rjF189WFC7vht_s
+id: node.field_fase
+field_name: field_fase
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: 'Fase de grupos'
+      label: 'Fase de grupos'
+    -
+      value: 'Dieciseisavos de final'
+      label: 'Dieciseisavos de final'
+    -
+      value: 'Octavos de final'
+      label: 'Octavos de final'
+    -
+      value: 'Cuartos de final'
+      label: 'Cuartos de final'
+    -
+      value: Semifinal
+      label: Semifinal
+    -
+      value: Final
+      label: Final
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

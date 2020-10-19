@@ -1,0 +1,16 @@
+uuid: f6666e93-b78b-4cfd-9d27-1f2cb0e24478
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.gestor
+  module:
+    - user
+_core:
+  default_config_hash: gIGhDuKIalIPVWrqc4JwWX1WrLKEQZthg5zIjw0eaAU
+id: user_add_role_action.gestor
+label: 'Añade el rol Gestor al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: gestor

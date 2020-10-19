@@ -1,0 +1,25 @@
+uuid: 2341e920-5212-4ead-8470-93edae389738
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ficha_deportiva
+    - node.type.jugador
+_core:
+  default_config_hash: LPqopFBtK8blj2vHKh3IkO1aCf1JEVzXhVJ58piP-WA
+id: node.jugador.field_ficha_deportiva
+field_name: field_ficha_deportiva
+entity_type: node
+bundle: jugador
+label: 'Ficha deportiva'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

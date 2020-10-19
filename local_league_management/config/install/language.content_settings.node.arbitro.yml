@@ -1,0 +1,13 @@
+uuid: ad0770f5-58ee-41d6-8218-91ee5dd4f531
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.arbitro
+_core:
+  default_config_hash: aXtoz232wYlRioW5seIlsDqyK-1yC_Dhr5wL2JLaQH0
+id: node.arbitro
+target_entity_type_id: node
+target_bundle: arbitro
+default_langcode: site_default
+language_alterable: false

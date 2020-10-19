@@ -1,0 +1,13 @@
+uuid: 6d25bb7e-0112-4830-ae11-0966c20779db
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.jugador
+_core:
+  default_config_hash: k82eYF1Xyk53Wj1JsyMr0ZeSOvCntDGgs7vS-infmL8
+id: node.jugador
+target_entity_type_id: node
+target_bundle: jugador
+default_langcode: site_default
+language_alterable: false

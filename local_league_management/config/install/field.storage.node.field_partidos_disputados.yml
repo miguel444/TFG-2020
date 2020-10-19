@@ -1,0 +1,22 @@
+uuid: 57762d38-62ed-496b-87c7-891f9501b048
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: xQWqMhhdjF4yzsCQbUcQzgLjPRe67zZ_DYheehJmEsc
+id: node.field_partidos_disputados
+field_name: field_partidos_disputados
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

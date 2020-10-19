@@ -1,0 +1,25 @@
+uuid: e5bff4bb-a7da-44ae-8808-185edbbb8ded
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_numero_colegiado
+    - node.type.arbitro
+_core:
+  default_config_hash: tr1aM_mg7rd3yliZVMU4WiIA-n3yUJ6rk8csoc60Vgc
+id: node.arbitro.field_numero_colegiado
+field_name: field_numero_colegiado
+entity_type: node
+bundle: arbitro
+label: 'Número colegiado'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

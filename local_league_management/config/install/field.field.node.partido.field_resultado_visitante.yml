@@ -1,0 +1,25 @@
+uuid: 3c692d9b-be52-4bc7-a9fa-22320836c05d
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_resultado_visitante
+    - node.type.partido
+_core:
+  default_config_hash: NmHMr7eH8GSlFltKG5i0TixQ7OylXE-h5R0ba2BQsFI
+id: node.partido.field_resultado_visitante
+field_name: field_resultado_visitante
+entity_type: node
+bundle: partido
+label: 'Resultado visitante'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

@@ -1,0 +1,22 @@
+uuid: f09f4964-3098-464a-8de5-eff14e46904b
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+    - user
+_core:
+  default_config_hash: C9RJaZY1610Ceivhq-1bLAJ_jsjdXiJnK8620J-BljE
+id: node.field_capitan
+field_name: field_capitan
+entity_type: node
+type: entity_reference
+settings:
+  target_type: user
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

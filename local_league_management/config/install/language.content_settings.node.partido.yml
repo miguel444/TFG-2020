@@ -1,0 +1,13 @@
+uuid: 048a27a4-0db5-49ba-8d52-c8b3414a7d10
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.partido
+_core:
+  default_config_hash: fGzcDFU_HegpLaSRJDYA62rRcvzIKjwLRIgclV5o7Vk
+id: node.partido
+target_entity_type_id: node
+target_bundle: partido
+default_langcode: site_default
+language_alterable: false

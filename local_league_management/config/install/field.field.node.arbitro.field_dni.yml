@@ -1,0 +1,25 @@
+uuid: e9a612dc-89ad-4227-870c-81541dc58f0c
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_dni
+    - node.type.arbitro
+_core:
+  default_config_hash: FUUWaGt7emqBzI41VyTlKWF5NDPOhp-DcsNnW0EIArQ
+id: node.arbitro.field_dni
+field_name: field_dni
+entity_type: node
+bundle: arbitro
+label: 'DNI sin letra'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

@@ -1,0 +1,23 @@
+uuid: 33d2b8bf-8477-4016-aa04-2d05a4e667b7
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_fase
+    - node.type.partido
+  module:
+    - options
+_core:
+  default_config_hash: PyWJG4uwa4PbLK3samK37G_803F0F4bkDJFMwPxFAwM
+id: node.partido.field_fase
+field_name: field_fase
+entity_type: node
+bundle: partido
+label: Fase
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

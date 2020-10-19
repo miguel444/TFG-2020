@@ -1,0 +1,58 @@
+uuid: 91437cec-7eee-46de-b6bb-859c46b53600
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.node.deporte.body
+    - field.field.node.deporte.field_alias
+    - field.field.node.deporte.field_competicion
+    - field.field.node.deporte.field_fecha_de_fin
+    - field.field.node.deporte.field_fecha_de_fin_inscripcion
+    - field.field.node.deporte.field_fecha_de_inicio
+    - field.field.node.deporte.field_fecha_de_inicio_inscripcio
+    - field.field.node.deporte.field_numero_de_equipos
+    - field.field.node.deporte.field_numero_maximo_de_equipos
+    - node.type.deporte
+  module:
+    - user
+_core:
+  default_config_hash: nzEzIK1gwUIVPUWCarVQ5nmHgh5i-hNmNFyKkpXkvjM
+id: node.deporte.default
+targetEntityType: node
+bundle: deporte
+mode: default
+content:
+  clubes_en_deportes_entity_view_1:
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  jornadas_en_deporte_entity_view_1:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  jornadas_en_deporte_entity_view_4:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  jornadas_en_deporte_entity_view_5:
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  body: true
+  field_alias: true
+  field_competicion: true
+  field_fecha_de_fin: true
+  field_fecha_de_fin_inscripcion: true
+  field_fecha_de_inicio: true
+  field_fecha_de_inicio_inscripcio: true
+  field_numero_de_equipos: true
+  field_numero_maximo_de_equipos: true
+  jornadas_en_deporte_entity_view_2: true
+  jornadas_en_deporte_entity_view_3: true
+  langcode: true
+  links: true

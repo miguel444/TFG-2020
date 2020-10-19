@@ -1,0 +1,24 @@
+uuid: 429887a9-c36b-4321-9cd3-2005d1ff12dd
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: cAcj2O4GiVK5RXTeOu3ztYVE7Y_aFc69w6dO0tc7ozs
+id: patron_jugadores
+label: 'Patrón jugadores'
+type: 'canonical_entities:node'
+pattern: '/competiciones/[node:field_club:entity:field_competicion:entity:title]/deportes/[node:field_club:entity:field_deporte:entity:title]/clubes/[node:field_club:entity:title]/jugadores/[node:title]'
+selection_criteria:
+  fb61885b-84c6-4ed4-b890-f1597661bcd1:
+    id: node_type
+    bundles:
+      jugador: jugador
+    negate: false
+    context_mapping:
+      node: node
+    uuid: fb61885b-84c6-4ed4-b890-f1597661bcd1
+selection_logic: and
+weight: -5
+relationships: {  }

@@ -1,0 +1,21 @@
+uuid: 9d7dd17f-874b-4540-87a5-67bd1bcd21ee
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: 9p28NbM7SirF8euJOjFYQcYNDJBqc9jMW5jf8seL5j4
+id: node.field_apellidos
+field_name: field_apellidos
+entity_type: node
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

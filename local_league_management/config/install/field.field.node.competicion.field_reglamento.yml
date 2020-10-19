@@ -1,0 +1,29 @@
+uuid: 188120c7-08b8-441e-a36c-b3728ca52016
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_reglamento
+    - node.type.competicion
+  module:
+    - file
+_core:
+  default_config_hash: wK2eHHi-3PqZBzZRh3VQfm3vYpzszGWA2IZZqQyZCt0
+id: node.competicion.field_reglamento
+field_name: field_reglamento
+entity_type: node
+bundle: competicion
+label: Reglamento
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: pdf
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

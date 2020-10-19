@@ -1,0 +1,27 @@
+uuid: d2899aab-9710-4715-a8e9-3d0053909db9
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_partidos_disputados
+    - node.type.jugador
+_core:
+  default_config_hash: N3XhJbn8peESecbFN36MmoItlFSdstb9rn4W8RJcWA8
+id: node.jugador.field_partidos_disputados
+field_name: field_partidos_disputados
+entity_type: node
+bundle: jugador
+label: 'Partidos disputados'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

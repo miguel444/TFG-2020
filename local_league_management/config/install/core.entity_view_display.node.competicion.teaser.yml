@@ -1,0 +1,70 @@
+uuid: ef423644-a022-461c-8c1d-f55964de9e9a
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.competicion.body
+    - field.field.node.competicion.field_alias
+    - field.field.node.competicion.field_ano_academico
+    - field.field.node.competicion.field_estado
+    - field.field.node.competicion.field_image
+    - field.field.node.competicion.field_numero_de_deportes
+    - field.field.node.competicion.field_reglamento
+    - node.type.competicion
+  module:
+    - text
+    - user
+_core:
+  default_config_hash: 5KJxN7M_TLn5ns528ztL7CVVd0R5HKH-95SEmFhh_Z8
+id: node.competicion.teaser
+targetEntityType: node
+bundle: competicion
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  deprotes_entity_view_1:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  deprotes_entity_view_2:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  deprotes_entity_view_3:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  deprotes_entity_view_4:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  duplicado_de_sport_tracker_competiciones_entity_view_1:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_alias: true
+  field_ano_academico: true
+  field_estado: true
+  field_image: true
+  field_numero_de_deportes: true
+  field_reglamento: true
+  langcode: true

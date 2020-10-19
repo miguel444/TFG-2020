@@ -1,0 +1,20 @@
+uuid: 3f9bc28c-db90-4746-ab41-033c237f0abf
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.club
+_core:
+  default_config_hash: GdH-SAN70GmKP1TUOl0Ti2qLBZFKe0du10A4tIap6h0
+id: node.club.title
+field_name: title
+entity_type: node
+bundle: club
+label: 'Nombre del club'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

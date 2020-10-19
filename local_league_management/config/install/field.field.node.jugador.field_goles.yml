@@ -1,0 +1,27 @@
+uuid: 0159e7fc-f362-4b86-8818-f9e353bc7e04
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_goles
+    - node.type.jugador
+_core:
+  default_config_hash: 7hQ1JthajnV18N4GGDAoBMaDZrbrDXMIuB-b3jg0S4s
+id: node.jugador.field_goles
+field_name: field_goles
+entity_type: node
+bundle: jugador
+label: Goles
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

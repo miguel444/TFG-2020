@@ -1,0 +1,20 @@
+uuid: bd7da838-21eb-4aeb-8d17-54856cd4d690
+langcode: es
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+_core:
+  default_config_hash: zl7SlGW5-ArI5u4W8knS_cQFmWqNy6C2f6M_3jIllbU
+name: Competicion
+type: competicion
+description: ''
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

@@ -1,0 +1,25 @@
+uuid: fc2007af-5796-489e-a48d-5ba559e0df9d
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_puntos_goles_a_favor
+    - node.type.club
+_core:
+  default_config_hash: S0XOpiDhtVuYZRGUowCo5susNyVZB2KoUqXecKJYoz4
+id: node.club.field_puntos_goles_a_favor
+field_name: field_puntos_goles_a_favor
+entity_type: node
+bundle: club
+label: 'Puntos/Goles a favor'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

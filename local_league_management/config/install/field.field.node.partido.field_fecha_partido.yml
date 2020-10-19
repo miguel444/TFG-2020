@@ -1,0 +1,23 @@
+uuid: a9d737aa-471f-4b4e-9120-552428139ed3
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_fecha_partido
+    - node.type.partido
+  module:
+    - datetime
+_core:
+  default_config_hash: J7e0pvySSXauQK80wFuOxLhIsRyhTucK0LOtDSX9qco
+id: node.partido.field_fecha_partido
+field_name: field_fecha_partido
+entity_type: node
+bundle: partido
+label: 'Fecha Partido'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

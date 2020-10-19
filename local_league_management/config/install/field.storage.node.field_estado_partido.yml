@@ -1,0 +1,32 @@
+uuid: 58110430-f515-495a-a417-2b383e84f840
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+    - options
+_core:
+  default_config_hash: OvZ5GOJk9ZPd-kN6yLZeDnXw8I2jmy7fowubeH1pHdw
+id: node.field_estado_partido
+field_name: field_estado_partido
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: 'Por disputar'
+      label: 'Por disputar'
+    -
+      value: Aplazado
+      label: Aplazado
+    -
+      value: Jugado
+      label: Jugado
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

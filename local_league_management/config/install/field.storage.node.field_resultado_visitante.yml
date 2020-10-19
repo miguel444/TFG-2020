@@ -1,0 +1,22 @@
+uuid: 359ccb53-4efa-455f-9b56-b42a4944f80a
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: 738Aun4yGz58Ba97bA2tNecauv-99hFItClCaykcxQ8
+id: node.field_resultado_visitante
+field_name: field_resultado_visitante
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

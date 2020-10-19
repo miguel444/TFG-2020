@@ -1,0 +1,28 @@
+uuid: f47b78b4-512c-40f4-909d-6bf11b192443
+langcode: es
+status: true
+dependencies:
+  config:
+    - views.view.jornadas_en_deporte
+  module:
+    - system
+    - views
+id: views_block__jornadas_en_deporte_block_3
+region: content
+weight: -2
+provider: null
+plugin: 'views_block:jornadas_en_deporte-block_3'
+settings:
+  id: 'views_block:jornadas_en_deporte-block_3'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  request_path:
+    id: request_path
+    pages: '/competiciones/*/deportes/*/mi_club_capitan'
+    negate: false
+    context_mapping: {  }

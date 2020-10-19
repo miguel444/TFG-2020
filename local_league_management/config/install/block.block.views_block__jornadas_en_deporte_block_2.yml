@@ -1,0 +1,28 @@
+uuid: 32a9461e-4e06-4522-afff-a8e560c922b8
+langcode: es
+status: true
+dependencies:
+  config:
+    - views.view.jornadas_en_deporte
+  module:
+    - system
+    - views
+id: views_block__jornadas_en_deporte_block_2
+region: content
+weight: -3
+provider: null
+plugin: 'views_block:jornadas_en_deporte-block_2'
+settings:
+  id: 'views_block:jornadas_en_deporte-block_2'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  request_path:
+    id: request_path
+    pages: '/competiciones/*/deportes/*/mi_club'
+    negate: false
+    context_mapping: {  }

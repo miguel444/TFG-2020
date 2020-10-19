@@ -1,0 +1,23 @@
+uuid: f8f2fa2a-db48-4365-b110-795d01b40665
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_estado_partido
+    - node.type.partido
+  module:
+    - options
+_core:
+  default_config_hash: FjmktYfLIFo8reon05V10kFrY-FMzE4_9Jumw4X6RMg
+id: node.partido.field_estado_partido
+field_name: field_estado_partido
+entity_type: node
+bundle: partido
+label: Estado
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string
